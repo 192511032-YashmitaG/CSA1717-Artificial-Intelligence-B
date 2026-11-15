@@ -1,0 +1,3 @@
+BFS: generated=31, expanded=30, frontier=16
+DFS: generated=31, expanded=30, frontier=5
+IDDFS: generated=57, expanded=26, frontier=5
