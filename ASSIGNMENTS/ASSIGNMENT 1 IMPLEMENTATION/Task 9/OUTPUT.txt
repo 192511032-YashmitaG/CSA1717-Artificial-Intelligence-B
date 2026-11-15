@@ -1,0 +1,23 @@
+Completed 1,000 states
+Completed 10,000 states
+Completed 100,000 states
+Completed 1,000,000 states
+Saved /mnt/data/CSA17_CO1_Assignment1_Yashmita_G_192511032_TASKWISE/Task_09/performance_results.txt
+
+BENCHMARK RESULTS
+SEED: deterministic graph generator (no random values)
+RUNS PER ALGORITHM AND SIZE: 5
+states | algorithm | generated | expanded | max_frontier | depth | path_cost | optimal | avg_time_ms
+1000 | BFS | 1000 | 999 | 667 | 6 | 6 | True | 0.209
+1000 | Iterative DFS | 958 | 954 | 13 | 6 | 6 | None | 0.239
+1000 | Recursive IDDFS | 1498 | 498 | 7 | 6 | 6 | True | 0.392
+10000 | BFS | 10000 | 9999 | 6667 | 9 | 9 | True | 1.807
+10000 | Iterative DFS | 253 | 242 | 19 | 9 | 9 | None | 0.050
+10000 | Recursive IDDFS | 15000 | 5000 | 10 | 9 | 9 | True | 4.328
+100000 | BFS | 100000 | 99999 | 66667 | 11 | 11 | True | 19.554
+100000 | Iterative DFS | 17161 | 17146 | 23 | 11 | 11 | None | 4.666
+100000 | Recursive IDDFS | 150001 | 50001 | 12 | 11 | 11 | True | 44.073
+1000000 | BFS | 1000000 | 999999 | 666667 | 13 | 13 | True | 239.498
+1000000 | Iterative DFS | 304279 | 304264 | 27 | 13 | 13 | None | 104.797
+1000000 | Recursive IDDFS | 1500000 | 500000 | 14 | 13 | 13 | True | 462.957
+
