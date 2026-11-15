@@ -1,0 +1,8 @@
+Best case
+  BFS: found=True, generated=1, expanded=0
+  DFS: found=True, generated=1, expanded=0
+  IDDFS: found=True, generated=1, expanded=0
+Goal at end
+  BFS: found=True, generated=31, expanded=30
+  DFS: found=True, generated=31, expanded=30
+  IDDFS: found=True, generated=57, expanded=26
