@@ -1,0 +1,866 @@
+{
+  "task1": {
+    "open": {
+      "ucs": {
+        "found": true,
+        "path": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            4,
+            9
+          ]
+        ],
+        "cost": 13,
+        "expanded": 49,
+        "generated": 50,
+        "max_frontier": 5,
+        "optimal": true,
+        "path_length": 13,
+        "time_ms": 0.1139
+      },
+      "greedy": {
+        "found": true,
+        "path": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            4,
+            9
+          ]
+        ],
+        "cost": 13,
+        "expanded": 13,
+        "generated": 25,
+        "max_frontier": 12,
+        "optimal": false,
+        "path_length": 13,
+        "time_ms": 0.0362
+      },
+      "astar": {
+        "found": true,
+        "path": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            4,
+            9
+          ]
+        ],
+        "cost": 13,
+        "expanded": 49,
+        "generated": 50,
+        "max_frontier": 5,
+        "optimal": true,
+        "path_length": 13,
+        "time_ms": 0.1455
+      }
+    },
+    "cluttered": {
+      "ucs": {
+        "found": true,
+        "path": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            4,
+            9
+          ]
+        ],
+        "cost": 19,
+        "expanded": 34,
+        "generated": 35,
+        "max_frontier": 4,
+        "optimal": true,
+        "path_length": 19,
+        "time_ms": 0.087
+      },
+      "greedy": {
+        "found": true,
+        "path": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            4,
+            9
+          ]
+        ],
+        "cost": 19,
+        "expanded": 22,
+        "generated": 27,
+        "max_frontier": 5,
+        "optimal": false,
+        "path_length": 19,
+        "time_ms": 0.042
+      },
+      "astar": {
+        "found": true,
+        "path": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            4,
+            9
+          ]
+        ],
+        "cost": 19,
+        "expanded": 30,
+        "generated": 33,
+        "max_frontier": 4,
+        "optimal": true,
+        "path_length": 19,
+        "time_ms": 0.0502
+      }
+    },
+    "dead_end": {
+      "ucs": {
+        "found": false,
+        "path": [],
+        "cost": null,
+        "expanded": 17,
+        "generated": 17,
+        "max_frontier": 3,
+        "optimal": true,
+        "path_length": null,
+        "time_ms": 0.0242
+      },
+      "greedy": {
+        "found": false,
+        "path": [],
+        "cost": null,
+        "expanded": 17,
+        "generated": 17,
+        "max_frontier": 3,
+        "optimal": false,
+        "path_length": null,
+        "time_ms": 0.0248
+      },
+      "astar": {
+        "found": false,
+        "path": [],
+        "cost": null,
+        "expanded": 17,
+        "generated": 17,
+        "max_frontier": 3,
+        "optimal": true,
+        "path_length": null,
+        "time_ms": 0.0247
+      }
+    }
+  },
+  "task2": {
+    "open_7x7": {
+      "found": true,
+      "moves": 48,
+      "revisits": 0,
+      "visited": 49,
+      "optimal_cost": 12,
+      "competitive_ratio": 4.0
+    },
+    "open_11x11": {
+      "found": true,
+      "moves": 120,
+      "revisits": 0,
+      "visited": 121,
+      "optimal_cost": 20,
+      "competitive_ratio": 6.0
+    },
+    "open_15x15": {
+      "found": true,
+      "moves": 224,
+      "revisits": 0,
+      "visited": 225,
+      "optimal_cost": 28,
+      "competitive_ratio": 8.0
+    },
+    "unreachable": {
+      "found": false,
+      "moves": 18,
+      "revisits": 9,
+      "visited": 10
+    },
+    "repeated_mission": {
+      "first_mission_exploration_moves": 24,
+      "subsequent_known_map_optimal_moves": 8
+    }
+  },
+  "task3": {
+    "favourable_order": {
+      "leaf_values": [
+        8,
+        9,
+        7,
+        100,
+        1,
+        2,
+        0,
+        3
+      ],
+      "minimax_value": 9,
+      "alpha_beta_value": 9,
+      "minimax_nodes": 15,
+      "alpha_beta_nodes": 12,
+      "cutoffs": 2
+    },
+    "unfavourable_order": {
+      "leaf_values": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        0,
+        8
+      ],
+      "minimax_value": 6,
+      "alpha_beta_value": 6,
+      "minimax_nodes": 15,
+      "alpha_beta_nodes": 14,
+      "cutoffs": 2
+    },
+    "random_order": {
+      "leaf_values": [
+        7,
+        5,
+        2,
+        0,
+        7,
+        4,
+        3,
+        7
+      ],
+      "minimax_value": 7,
+      "alpha_beta_value": 7,
+      "minimax_nodes": 15,
+      "alpha_beta_nodes": 15,
+      "cutoffs": 1
+    }
+  },
+  "task4": {
+    "b2_d4": {
+      "value": -0.16762,
+      "nodes": 31,
+      "evaluation_calls": 16
+    },
+    "b3_d4": {
+      "value": -0.42527,
+      "nodes": 121,
+      "evaluation_calls": 81
+    },
+    "b3_d5": {
+      "value": 0.3113,
+      "nodes": 364,
+      "evaluation_calls": 243
+    },
+    "b4_d5": {
+      "value": 0.53725,
+      "nodes": 1365,
+      "evaluation_calls": 1024
+    }
+  },
+  "task5": {
+    "forced_instance": {
+      "initial_domains": {
+        "A": [
+          1
+        ],
+        "B": [
+          2
+        ],
+        "X": [
+          1,
+          2,
+          3
+        ],
+        "C": [
+          1,
+          2,
+          3
+        ]
+      },
+      "after_ac3": {
+        "A": [
+          1
+        ],
+        "B": [
+          2
+        ],
+        "X": [
+          3
+        ],
+        "C": [
+          1,
+          2
+        ]
+      },
+      "arc_consistent": true,
+      "arc_checks": 17,
+      "values_removed": 3,
+      "solution_without_propagation": {
+        "A": 1,
+        "B": 2,
+        "X": 3,
+        "C": 1
+      },
+      "stats_without": {
+        "nodes": 5,
+        "backtracks": 0,
+        "checks": 3,
+        "wipeouts": 0
+      },
+      "solution_with_propagation": {
+        "A": 1,
+        "B": 2,
+        "X": 3,
+        "C": 1
+      },
+      "stats_with": {
+        "nodes": 5,
+        "backtracks": 0,
+        "checks": 36,
+        "wipeouts": 0
+      }
+    },
+    "triangle_unsat": {
+      "after_ac3": {
+        "X": [
+          1,
+          2
+        ],
+        "Y": [
+          1,
+          2
+        ],
+        "Z": [
+          1,
+          2
+        ]
+      },
+      "arc_consistent": true,
+      "checks": 12,
+      "removed": 0,
+      "backtracking_solution": null,
+      "backtracking_stats": {
+        "nodes": 1,
+        "backtracks": 1,
+        "checks": 10,
+        "wipeouts": 2
+      }
+    }
+  },
+  "task6_task7": {
+    "6": {
+      "exhaustive": {
+        "tour": [
+          0,
+          2,
+          3,
+          5,
+          1,
+          4
+        ],
+        "cost": 152.329,
+        "candidates": 120
+      },
+      "two_opt_runs": 20,
+      "two_opt_mean_cost": 152.329,
+      "two_opt_best_cost": 152.329,
+      "two_opt_mean_gap_pct": 0.0,
+      "two_opt_mean_time_ms": 0.0475,
+      "branch_bound": {
+        "tour": [
+          0,
+          2,
+          3,
+          5,
+          1,
+          4
+        ],
+        "cost": 152.329,
+        "nodes": 38,
+        "pruned": 25
+      }
+    },
+    "7": {
+      "exhaustive": {
+        "tour": [
+          0,
+          1,
+          5,
+          3,
+          4,
+          6,
+          2
+        ],
+        "cost": 211.753,
+        "candidates": 720
+      },
+      "two_opt_runs": 20,
+      "two_opt_mean_cost": 211.753,
+      "two_opt_best_cost": 211.753,
+      "two_opt_mean_gap_pct": 0.0,
+      "two_opt_mean_time_ms": 0.0606,
+      "branch_bound": {
+        "tour": [
+          0,
+          1,
+          5,
+          3,
+          4,
+          6,
+          2
+        ],
+        "cost": 211.753,
+        "nodes": 44,
+        "pruned": 29
+      }
+    },
+    "8": {
+      "exhaustive": {
+        "tour": [
+          0,
+          3,
+          1,
+          5,
+          2,
+          6,
+          4,
+          7
+        ],
+        "cost": 263.989,
+        "candidates": 5040
+      },
+      "two_opt_runs": 20,
+      "two_opt_mean_cost": 263.989,
+      "two_opt_best_cost": 263.989,
+      "two_opt_mean_gap_pct": 0.0,
+      "two_opt_mean_time_ms": 0.099,
+      "branch_bound": {
+        "tour": [
+          0,
+          3,
+          1,
+          5,
+          2,
+          6,
+          4,
+          7
+        ],
+        "cost": 263.989,
+        "nodes": 35,
+        "pruned": 26
+      }
+    },
+    "9": {
+      "exhaustive": {
+        "tour": [
+          0,
+          2,
+          1,
+          3,
+          7,
+          6,
+          4,
+          8,
+          5
+        ],
+        "cost": 263.7,
+        "candidates": 40320
+      },
+      "two_opt_runs": 20,
+      "two_opt_mean_cost": 270.113,
+      "two_opt_best_cost": 263.7,
+      "two_opt_mean_gap_pct": 2.432,
+      "two_opt_mean_time_ms": 0.1091,
+      "branch_bound": {
+        "tour": [
+          0,
+          5,
+          8,
+          4,
+          6,
+          7,
+          3,
+          1,
+          2
+        ],
+        "cost": 263.7,
+        "nodes": 86,
+        "pruned": 62
+      }
+    }
+  }
+}
