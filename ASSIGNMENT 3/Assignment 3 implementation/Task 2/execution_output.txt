@@ -1,0 +1,112 @@
+{
+  "policy_rules": [
+    "ValidBadge -> Identified",
+    "Identified -> AccessAllowed",
+    "Staff -> ValidBadge",
+    "Visitor -> Escort",
+    "Emergency -> Override",
+    "Override -> AccessAllowed",
+    "AfterHours -> SupervisorApproval",
+    "SupervisorApproval -> AccessAllowed",
+    "RestrictedZone -> ValidBadge",
+    "NOTExpired -> ValidBadge",
+    "Visitor OR Staff",
+    "AccessAllowed <-> (Override OR SupervisorApproval OR Staff)",
+    "NOT(Expired AND AccessAllowed)",
+    "NOT(RestrictedZone) OR ValidBadge"
+  ],
+  "manual_cnf": [
+    "P -> Q  becomes  ~P OR Q",
+    "P <-> Q becomes (~P OR Q) AND (~Q OR P)",
+    "P OR (Q AND R) becomes (P OR Q) AND (P OR R)"
+  ],
+  "proof": {
+    "entailed": true,
+    "clauses": 7,
+    "resolvents_attempted": 7,
+    "tautologies_discarded": 0,
+    "subsumed": 2,
+    "proof_steps": 4
+  },
+  "chain_scaling": [
+    {
+      "chain_length": 10,
+      "initial_clauses": 12,
+      "entailed": true,
+      "clauses": 65,
+      "resolvents_attempted": 264,
+      "tautologies_discarded": 0,
+      "subsumed": 205,
+      "proof_steps": 54,
+      "time_seconds": 0.0011946739998620615
+    },
+    {
+      "chain_length": 20,
+      "initial_clauses": 22,
+      "entailed": true,
+      "clauses": 200,
+      "resolvents_attempted": 1357,
+      "tautologies_discarded": 0,
+      "subsumed": 1163,
+      "proof_steps": 179,
+      "time_seconds": 0.012718798999912906
+    },
+    {
+      "chain_length": 40,
+      "initial_clauses": 42,
+      "entailed": true,
+      "clauses": 722,
+      "resolvents_attempted": 9169,
+      "tautologies_discarded": 0,
+      "subsumed": 8488,
+      "proof_steps": 681,
+      "time_seconds": 0.20121394400007375
+    },
+    {
+      "chain_length": 80,
+      "initial_clauses": 82,
+      "entailed": true,
+      "clauses": 2451,
+      "resolvents_attempted": 72122,
+      "tautologies_discarded": 0,
+      "subsumed": 69740,
+      "proof_steps": 2370,
+      "time_seconds": 5.511942946999852
+    }
+  ],
+  "non_entailed": {
+    "entailed": false,
+    "clauses": 3,
+    "resolvents_attempted": 0,
+    "tautologies_discarded": 0,
+    "subsumed": 0,
+    "proof_steps": 0
+  },
+  "model_family": [
+    {
+      "symbols": 8,
+      "models": 256,
+      "entailed": true,
+      "time_seconds": 0.000414192000107505
+    },
+    {
+      "symbols": 10,
+      "models": 1024,
+      "entailed": true,
+      "time_seconds": 0.0012836459998197824
+    },
+    {
+      "symbols": 12,
+      "models": 4096,
+      "entailed": true,
+      "time_seconds": 0.006105756000124529
+    },
+    {
+      "symbols": 14,
+      "models": 16384,
+      "entailed": true,
+      "time_seconds": 0.025147171000071467
+    }
+  ],
+  "interpretation": "Resolution is effective when the query has a short contradiction proof; model checking is predictable for very small symbol sets but exponential in the number of symbols."
+}
