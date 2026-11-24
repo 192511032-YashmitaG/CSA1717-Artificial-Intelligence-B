@@ -1,0 +1,114 @@
+{
+  "unification_tests": [
+    {
+      "left": "?x",
+      "right": "Alice",
+      "mgu": {
+        "?x": "Alice"
+      }
+    },
+    {
+      "left": "?x",
+      "right": "?y",
+      "mgu": {
+        "?x": "?y"
+      }
+    },
+    {
+      "left": "('parent', '?x', 'Bob')",
+      "right": "('parent', 'Alice', '?y')",
+      "mgu": {
+        "?x": "Alice",
+        "?y": "Bob"
+      }
+    },
+    {
+      "left": "?x",
+      "right": "('f', 'Alice')",
+      "mgu": {
+        "?x": [
+          "f",
+          "Alice"
+        ]
+      }
+    },
+    {
+      "left": "?x",
+      "right": "('f', '?x')",
+      "mgu": null
+    }
+  ],
+  "standardising_apart": {
+    "before": "Knows(?x,?y) AND Knows(?x,?y) with same variable names can accidentally force same bindings",
+    "after": "Knows(?x1,?y1) AND Knows(?x2,?y2) after standardising the second clause apart"
+  },
+  "ground_growth": [
+    {
+      "constants": 3,
+      "unary_atoms": 3,
+      "binary_atoms": 9,
+      "ternary_atoms": 27
+    },
+    {
+      "constants": 5,
+      "unary_atoms": 5,
+      "binary_atoms": 25,
+      "ternary_atoms": 125
+    },
+    {
+      "constants": 10,
+      "unary_atoms": 10,
+      "binary_atoms": 100,
+      "ternary_atoms": 1000
+    },
+    {
+      "constants": 20,
+      "unary_atoms": 20,
+      "binary_atoms": 400,
+      "ternary_atoms": 8000
+    },
+    {
+      "constants": 30,
+      "unary_atoms": 30,
+      "binary_atoms": 900,
+      "ternary_atoms": 27000
+    }
+  ],
+  "function_term_growth": [
+    {
+      "depth": 0,
+      "terms": 1
+    },
+    {
+      "depth": 1,
+      "terms": 3
+    },
+    {
+      "depth": 2,
+      "terms": 7
+    },
+    {
+      "depth": 3,
+      "terms": 15
+    },
+    {
+      "depth": 4,
+      "terms": 31
+    },
+    {
+      "depth": 5,
+      "terms": 63
+    }
+  ],
+  "lifted": {
+    "unifications": 12,
+    "inference_steps": 8,
+    "ground_instances_generated": 0
+  },
+  "propositional": {
+    "unifications": 0,
+    "inference_steps": 27,
+    "ground_instances_generated": 34
+  },
+  "decision": "Use lifted inference for reusable general rules and larger constant sets. Propositionalise only for a small, finite, closed domain where ground clauses can be indexed and reused cheaply."
+}
