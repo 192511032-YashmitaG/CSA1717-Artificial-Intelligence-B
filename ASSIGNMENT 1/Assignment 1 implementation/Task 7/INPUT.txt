@@ -1,0 +1,3 @@
+Branching factor (b): 3
+Maximum depth (d): 4
+Calculate recursive depth-limited calls and total IDDFS calls.
