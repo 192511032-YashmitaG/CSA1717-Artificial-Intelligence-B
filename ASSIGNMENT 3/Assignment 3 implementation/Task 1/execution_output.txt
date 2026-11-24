@@ -1,0 +1,149 @@
+{
+  "symbols": 5,
+  "model_count": 32,
+  "query_results": {
+    "P11_entails": {
+      "entailed": true,
+      "contradicted": false,
+      "unknown": false,
+      "models": 32,
+      "kb_evaluations": 32,
+      "satisfying_models": 2
+    },
+    "Safe11_entails": {
+      "entailed": false,
+      "contradicted": true,
+      "unknown": false,
+      "models": 32,
+      "kb_evaluations": 32,
+      "satisfying_models": 2
+    },
+    "W12_unknown": {
+      "entailed": false,
+      "contradicted": false,
+      "unknown": true,
+      "models": 64,
+      "kb_evaluations": 64,
+      "satisfying_models": 4
+    }
+  },
+  "derivation": [
+    "1. B12 (given percept fact)",
+    "2. B12 -> P11 (adjacency rule)",
+    "3. P11 (Modus Ponens from 1 and 2)",
+    "4. S21 is false (given percept fact)",
+    "5. W11 is not inferred from S21; absence of stench is not a proof of no Wumpus unless the converse rule is encoded.",
+    "6. NoPit13 and NoWumpus13 are explicit facts in the second local example.",
+    "7. NoPit13 AND NoWumpus13 -> Safe13; And-Elimination preserves each known conjunct and Modus Ponens derives Safe13."
+  ],
+  "soundness_tables": {
+    "modus_ponens": [
+      {
+        "p": false,
+        "implication": true,
+        "q": false,
+        "premises_hold": false,
+        "conclusion": false
+      },
+      {
+        "p": false,
+        "implication": true,
+        "q": true,
+        "premises_hold": false,
+        "conclusion": true
+      },
+      {
+        "p": true,
+        "implication": false,
+        "q": false,
+        "premises_hold": false,
+        "conclusion": false
+      },
+      {
+        "p": true,
+        "implication": true,
+        "q": true,
+        "premises_hold": true,
+        "conclusion": true
+      }
+    ],
+    "and_elimination": [
+      {
+        "p": false,
+        "q": false,
+        "premise": false,
+        "conclusion": false
+      },
+      {
+        "p": false,
+        "q": true,
+        "premise": false,
+        "conclusion": false
+      },
+      {
+        "p": true,
+        "q": false,
+        "premise": false,
+        "conclusion": true
+      },
+      {
+        "p": true,
+        "q": true,
+        "premise": true,
+        "conclusion": true
+      }
+    ],
+    "unit_resolution": [
+      {
+        "p": false,
+        "q": false,
+        "c1": true,
+        "c2": false,
+        "conclusion": false
+      },
+      {
+        "p": false,
+        "q": true,
+        "c1": true,
+        "c2": false,
+        "conclusion": true
+      },
+      {
+        "p": true,
+        "q": false,
+        "c1": false,
+        "c2": true,
+        "conclusion": false
+      },
+      {
+        "p": true,
+        "q": true,
+        "c1": true,
+        "c2": true,
+        "conclusion": true
+      }
+    ]
+  },
+  "scaling": [
+    {
+      "n": 2,
+      "symbols": 16,
+      "models": "65536"
+    },
+    {
+      "n": 3,
+      "symbols": 36,
+      "models": "68719476736"
+    },
+    {
+      "n": 4,
+      "symbols": 64,
+      "models": "18446744073709551616"
+    }
+  ],
+  "full_n2_enumeration": {
+    "models_enumerated": 65536,
+    "time_seconds": 0.003268104999960997
+  },
+  "note": "The complete n=2 assignment space is enumerated; n=3 and n=4 full spaces are infeasible. Local query-relevant fragments are exhaustively checked."
+}
