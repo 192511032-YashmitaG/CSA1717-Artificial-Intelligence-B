@@ -1,0 +1,3 @@
+BFS found = True path = [0, 2, 6, 14]
+Iterative DFS found = True path = [0, 2, 6, 14]
+Recursive IDDFS found = True path = [0, 2, 6, 14]
