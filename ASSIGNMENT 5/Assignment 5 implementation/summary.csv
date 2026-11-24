@@ -1,0 +1,14 @@
+section,metric,value
+expert,holdout_accuracy,1.0000
+intrusion_full,accuracy,0.9384
+intrusion_full,precision,0.9531
+intrusion_full,recall,0.8420
+intrusion_full,f1,0.8941
+intrusion_full,roc_auc,0.9567
+intrusion_edge,accuracy,0.8816
+intrusion_edge,precision,0.9190
+intrusion_edge,recall,0.6762
+intrusion_edge,f1,0.7791
+intrusion_edge,roc_auc,0.9303
+chatbot,response_mean_latency_ms,0.6777
+chatbot,response_p95_latency_ms,1.0501

@@ -1,0 +1,8 @@
+CSA1717 Assignment 5 CO5 experiment execution summary
+Expert-system hold-out accuracy (15 cases): 1.0000
+Full intrusion model: accuracy=0.9384, precision=0.9531, recall=0.8420, F1=0.8941, ROC-AUC=0.9567
+Edge intrusion model: accuracy=0.8816, precision=0.9190, recall=0.6762, F1=0.7791, ROC-AUC=0.9303
+Full latency mean/p95: 4.6728/5.7597 ms; size=3532.8 KB
+Edge latency mean/p95: 0.9300/1.1610 ms; size=94.4 KB
+PySpark availability: not installed; Spark code supplied but Spark benchmark not executed.
+Scaling figures are local NumPy aggregation proxies and must not be represented as Spark timings.

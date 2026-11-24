@@ -1,0 +1,141 @@
+{
+  "intrusion_full": {
+    "accuracy": 0.9384,
+    "precision": 0.9530791788856305,
+    "recall": 0.8419689119170984,
+    "f1": 0.8940852819807428,
+    "roc_auc": 0.9567051669545192,
+    "confusion_matrix": [
+      [
+        848,
+        16
+      ],
+      [
+        61,
+        325
+      ]
+    ]
+  },
+  "intrusion_edge": {
+    "accuracy": 0.8816,
+    "precision": 0.9190140845070423,
+    "recall": 0.6761658031088082,
+    "f1": 0.7791044776119403,
+    "roc_auc": 0.9303171776050662,
+    "confusion_matrix": [
+      [
+        841,
+        23
+      ],
+      [
+        125,
+        261
+      ]
+    ]
+  },
+  "chatbot_examples": [
+    {
+      "query": "show open alerts",
+      "prediction": "list_alerts",
+      "confidence": 1.0
+    },
+    {
+      "query": "why was this flagged",
+      "prediction": "explain_flag",
+      "confidence": 1.0
+    },
+    {
+      "query": "tell me a joke",
+      "prediction": "out_of_scope",
+      "confidence": 0.0
+    }
+  ],
+  "expert_examples": [
+    {
+      "features": [
+        "vibration_high",
+        "noise_grinding"
+      ],
+      "diagnosis": "bearing_wear",
+      "rules_fired": [
+        {
+          "symptom": "vibration_high",
+          "conclusion": "bearing_wear",
+          "weight": 5
+        },
+        {
+          "symptom": "noise_grinding",
+          "conclusion": "bearing_wear",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "features": [
+        "fluid_loss",
+        "drip_detected"
+      ],
+      "diagnosis": "seal_leak",
+      "rules_fired": [
+        {
+          "symptom": "fluid_loss",
+          "conclusion": "seal_leak",
+          "weight": 5
+        },
+        {
+          "symptom": "drip_detected",
+          "conclusion": "seal_leak",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "features": [
+        "voltage_low",
+        "current_zero"
+      ],
+      "diagnosis": "power_fault",
+      "rules_fired": [
+        {
+          "symptom": "voltage_low",
+          "conclusion": "power_fault",
+          "weight": 5
+        },
+        {
+          "symptom": "current_zero",
+          "conclusion": "power_fault",
+          "weight": 5
+        }
+      ]
+    },
+    {
+      "features": [
+        "unseen_symptom"
+      ],
+      "diagnosis": "unknown",
+      "rules_fired": []
+    }
+  ],
+  "swarm_examples": [
+    {
+      "coverage_pct": 97.29729729729729,
+      "redundancy_pct": 62.5,
+      "success": true
+    },
+    {
+      "coverage_pct": 99.45652173913044,
+      "redundancy_pct": 80.9375,
+      "success": true
+    },
+    {
+      "coverage_pct": 100.0,
+      "redundancy_pct": 92.33333333333333,
+      "success": true
+    },
+    {
+      "coverage_pct": 100.0,
+      "redundancy_pct": 96.14583333333333,
+      "success": true
+    }
+  ]
+}
