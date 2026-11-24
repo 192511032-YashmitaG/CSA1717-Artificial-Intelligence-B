@@ -1,0 +1,4 @@
+Graph sizes: 1,000; 10,000; 100,000; 1,000,000 locations
+Algorithms: BFS, iterative DFS and recursive IDDFS
+Runs: 5 per algorithm and size
+Record generated, expanded, maximum frontier, solution depth, path cost, optimality and average runtime.
