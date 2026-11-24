@@ -1,1 +1,0 @@
-This folder contains the captured standard output from running the task wrapper and a terminal-style PNG rendering of that output. The PNG is generated from program output; it is not a photograph of a physical desktop terminal.
