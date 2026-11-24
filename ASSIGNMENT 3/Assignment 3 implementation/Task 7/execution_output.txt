@@ -1,0 +1,440 @@
+{
+  "representation": "First-order definite-clause rules with indexed patient/drug facts; backward chaining for a single prescription query and provenance list for explanations.",
+  "vocabulary": [
+    "Patient(p)",
+    "Drug(d)",
+    "Allergy(p,d)",
+    "SevereInteraction(p,d)",
+    "DuplicateTherapy(p,d)",
+    "RenalRisk(p,d)",
+    "Contraindicated(p,d)",
+    "NeedsClinicianReview(p,d)",
+    "Unsafe(p,d)"
+  ],
+  "rules": [
+    "Allergy(patient,drug) -> Contraindicated(patient,drug)",
+    "SevereInteraction(patient,drug) -> Contraindicated(patient,drug)",
+    "DuplicateTherapy(patient,drug) -> ReviewRequired(patient,drug)",
+    "AgeRisk(patient,drug) -> ReviewRequired(patient,drug)",
+    "RenalRisk(patient,drug) -> DoseReview(patient,drug)",
+    "PregnancyRisk(patient,drug) -> ReviewRequired(patient,drug)",
+    "Contraindicated(patient,drug) -> Unsafe(patient,drug)",
+    "ReviewRequired(patient,drug) -> NeedsClinicianReview(patient,drug)",
+    "DoseReview(patient,drug) -> NeedsClinicianReview(patient,drug)",
+    "NoContraindication(patient,drug) AND DoseOK(patient,drug) -> SafeForReview(patient,drug)"
+  ],
+  "test_cases": [
+    {
+      "case": "MED-01",
+      "allergy": true,
+      "interaction": false,
+      "duplicate": true,
+      "age_risk": true,
+      "renal_risk": true,
+      "pregnancy_risk": true,
+      "decision": "UNSAFE",
+      "explanation": [
+        "documented allergy",
+        "duplicate therapy",
+        "age-related risk",
+        "renal dose review",
+        "pregnancy-related risk"
+      ]
+    },
+    {
+      "case": "MED-02",
+      "allergy": false,
+      "interaction": true,
+      "duplicate": false,
+      "age_risk": false,
+      "renal_risk": false,
+      "pregnancy_risk": false,
+      "decision": "UNSAFE",
+      "explanation": [
+        "severe interaction"
+      ]
+    },
+    {
+      "case": "MED-03",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": false,
+      "age_risk": false,
+      "renal_risk": false,
+      "pregnancy_risk": false,
+      "decision": "NO_RULE_TRIGGERED",
+      "explanation": []
+    },
+    {
+      "case": "MED-04",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": false,
+      "age_risk": false,
+      "renal_risk": false,
+      "pregnancy_risk": false,
+      "decision": "NO_RULE_TRIGGERED",
+      "explanation": []
+    },
+    {
+      "case": "MED-05",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": false,
+      "age_risk": false,
+      "renal_risk": false,
+      "pregnancy_risk": false,
+      "decision": "NO_RULE_TRIGGERED",
+      "explanation": []
+    },
+    {
+      "case": "MED-06",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": false,
+      "age_risk": false,
+      "renal_risk": true,
+      "pregnancy_risk": false,
+      "decision": "REVIEW",
+      "explanation": [
+        "renal dose review"
+      ]
+    },
+    {
+      "case": "MED-07",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": false,
+      "age_risk": false,
+      "renal_risk": false,
+      "pregnancy_risk": false,
+      "decision": "NO_RULE_TRIGGERED",
+      "explanation": []
+    },
+    {
+      "case": "MED-08",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": true,
+      "age_risk": false,
+      "renal_risk": false,
+      "pregnancy_risk": false,
+      "decision": "REVIEW",
+      "explanation": [
+        "duplicate therapy"
+      ]
+    },
+    {
+      "case": "MED-09",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": false,
+      "age_risk": false,
+      "renal_risk": false,
+      "pregnancy_risk": false,
+      "decision": "NO_RULE_TRIGGERED",
+      "explanation": []
+    },
+    {
+      "case": "MED-10",
+      "allergy": true,
+      "interaction": false,
+      "duplicate": false,
+      "age_risk": false,
+      "renal_risk": false,
+      "pregnancy_risk": false,
+      "decision": "UNSAFE",
+      "explanation": [
+        "documented allergy"
+      ]
+    },
+    {
+      "case": "MED-11",
+      "allergy": false,
+      "interaction": true,
+      "duplicate": false,
+      "age_risk": false,
+      "renal_risk": true,
+      "pregnancy_risk": false,
+      "decision": "UNSAFE",
+      "explanation": [
+        "severe interaction",
+        "renal dose review"
+      ]
+    },
+    {
+      "case": "MED-12",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": false,
+      "age_risk": true,
+      "renal_risk": false,
+      "pregnancy_risk": false,
+      "decision": "REVIEW",
+      "explanation": [
+        "age-related risk"
+      ]
+    },
+    {
+      "case": "MED-13",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": false,
+      "age_risk": false,
+      "renal_risk": false,
+      "pregnancy_risk": false,
+      "decision": "NO_RULE_TRIGGERED",
+      "explanation": []
+    },
+    {
+      "case": "MED-14",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": false,
+      "age_risk": false,
+      "renal_risk": false,
+      "pregnancy_risk": true,
+      "decision": "REVIEW",
+      "explanation": [
+        "pregnancy-related risk"
+      ]
+    },
+    {
+      "case": "MED-15",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": true,
+      "age_risk": false,
+      "renal_risk": false,
+      "pregnancy_risk": false,
+      "decision": "REVIEW",
+      "explanation": [
+        "duplicate therapy"
+      ]
+    },
+    {
+      "case": "MED-16",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": false,
+      "age_risk": false,
+      "renal_risk": true,
+      "pregnancy_risk": false,
+      "decision": "REVIEW",
+      "explanation": [
+        "renal dose review"
+      ]
+    },
+    {
+      "case": "MED-17",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": false,
+      "age_risk": false,
+      "renal_risk": false,
+      "pregnancy_risk": false,
+      "decision": "NO_RULE_TRIGGERED",
+      "explanation": []
+    },
+    {
+      "case": "MED-18",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": false,
+      "age_risk": false,
+      "renal_risk": false,
+      "pregnancy_risk": false,
+      "decision": "NO_RULE_TRIGGERED",
+      "explanation": []
+    },
+    {
+      "case": "MED-19",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": false,
+      "age_risk": false,
+      "renal_risk": false,
+      "pregnancy_risk": false,
+      "decision": "NO_RULE_TRIGGERED",
+      "explanation": []
+    },
+    {
+      "case": "MED-20",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": false,
+      "age_risk": false,
+      "renal_risk": false,
+      "pregnancy_risk": false,
+      "decision": "NO_RULE_TRIGGERED",
+      "explanation": []
+    },
+    {
+      "case": "MED-21",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": false,
+      "age_risk": false,
+      "renal_risk": true,
+      "pregnancy_risk": false,
+      "decision": "REVIEW",
+      "explanation": [
+        "renal dose review"
+      ]
+    },
+    {
+      "case": "MED-22",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": true,
+      "age_risk": false,
+      "renal_risk": false,
+      "pregnancy_risk": false,
+      "decision": "REVIEW",
+      "explanation": [
+        "duplicate therapy"
+      ]
+    },
+    {
+      "case": "MED-23",
+      "allergy": true,
+      "interaction": false,
+      "duplicate": false,
+      "age_risk": true,
+      "renal_risk": false,
+      "pregnancy_risk": false,
+      "decision": "UNSAFE",
+      "explanation": [
+        "documented allergy",
+        "age-related risk"
+      ]
+    },
+    {
+      "case": "MED-24",
+      "allergy": false,
+      "interaction": true,
+      "duplicate": false,
+      "age_risk": false,
+      "renal_risk": false,
+      "pregnancy_risk": false,
+      "decision": "UNSAFE",
+      "explanation": [
+        "severe interaction"
+      ]
+    },
+    {
+      "case": "MED-25",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": false,
+      "age_risk": false,
+      "renal_risk": false,
+      "pregnancy_risk": false,
+      "decision": "NO_RULE_TRIGGERED",
+      "explanation": []
+    },
+    {
+      "case": "MED-26",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": false,
+      "age_risk": false,
+      "renal_risk": true,
+      "pregnancy_risk": false,
+      "decision": "REVIEW",
+      "explanation": [
+        "renal dose review"
+      ]
+    },
+    {
+      "case": "MED-27",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": false,
+      "age_risk": false,
+      "renal_risk": false,
+      "pregnancy_risk": true,
+      "decision": "REVIEW",
+      "explanation": [
+        "pregnancy-related risk"
+      ]
+    },
+    {
+      "case": "MED-28",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": false,
+      "age_risk": false,
+      "renal_risk": false,
+      "pregnancy_risk": false,
+      "decision": "NO_RULE_TRIGGERED",
+      "explanation": []
+    },
+    {
+      "case": "MED-29",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": true,
+      "age_risk": false,
+      "renal_risk": false,
+      "pregnancy_risk": false,
+      "decision": "REVIEW",
+      "explanation": [
+        "duplicate therapy"
+      ]
+    },
+    {
+      "case": "MED-30",
+      "allergy": false,
+      "interaction": false,
+      "duplicate": false,
+      "age_risk": false,
+      "renal_risk": false,
+      "pregnancy_risk": false,
+      "decision": "NO_RULE_TRIGGERED",
+      "explanation": []
+    }
+  ],
+  "test_summary": {
+    "total": 30,
+    "unsafe": 6,
+    "review": 11,
+    "no_rule_triggered": 13
+  },
+  "scale": [
+    {
+      "rules": 40,
+      "patients": 50,
+      "queries": 30,
+      "baseline_scan_steps": 1200,
+      "indexed_steps": 180,
+      "inference_steps": 1380,
+      "mean_latency_ms": 0.02091419999790863,
+      "peak_memory_kb": 2.443359375,
+      "explanation_mean_length": 0.7666666666666667
+    },
+    {
+      "rules": 400,
+      "patients": 50,
+      "queries": 30,
+      "baseline_scan_steps": 12000,
+      "indexed_steps": 180,
+      "inference_steps": 12180,
+      "mean_latency_ms": 0.2565397666633847,
+      "peak_memory_kb": 29.5078125,
+      "explanation_mean_length": 0.7666666666666667
+    },
+    {
+      "rules": 2000,
+      "patients": 50,
+      "queries": 30,
+      "baseline_scan_steps": 60000,
+      "indexed_steps": 180,
+      "inference_steps": 60180,
+      "mean_latency_ms": 1.4441439666673734,
+      "peak_memory_kb": 150.912109375,
+      "explanation_mean_length": 0.7666666666666667
+    }
+  ],
+  "design": "The component is advisory only. It must not autonomously approve a prescription. Missing allergy, medication or condition data must yield an explicit incomplete-data warning and clinician review. Uncertainty and conflicting records are outside pure classical FOL and require provenance, confidence handling and human oversight."
+}
