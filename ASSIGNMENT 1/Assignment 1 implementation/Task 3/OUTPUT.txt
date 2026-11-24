@@ -1,0 +1,4 @@
+Branching factor: 3 Goal depth: 4
+Nodes at levels 0..d: [1, 3, 9, 27, 81]
+BFS nodes through goal level: 121
+IDDFS recursive calls across limits: 179

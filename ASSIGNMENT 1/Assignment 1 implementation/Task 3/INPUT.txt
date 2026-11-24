@@ -1,0 +1,3 @@
+Branching factor (b): 3
+Goal depth (d): 4
+Calculate nodes at each level, BFS total and IDDFS recursive-call total.
