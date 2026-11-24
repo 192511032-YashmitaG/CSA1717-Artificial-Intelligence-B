@@ -1,0 +1,183 @@
+{
+  "vocabulary": [
+    "Student(x)",
+    "Enrolled(x,c)",
+    "Attendance(x,c)",
+    "PrerequisiteCleared(x,c)",
+    "FeesPaid(x,c)",
+    "DisciplinaryBlocked(x)",
+    "ApprovedLeave(x,c)",
+    "Eligible(x,c)"
+  ],
+  "axioms": [
+    "forall x,c: Student(x) & Enrolled(x,c) & Attendance(x,c)>=75 -> AttendanceOK(x,c)",
+    "forall x,c: PrerequisiteCleared(x,c) -> PrerequisiteOK(x,c)",
+    "forall x,c: FeesPaid(x,c) -> FeeOK(x,c)",
+    "forall x: not DisciplinaryBlocked(x) -> DisciplineOK(x)",
+    "forall x,c: ApprovedLeave(x,c) -> AttendanceWaived(x,c)",
+    "forall x,c: AttendanceWaived(x,c) OR AttendanceOK(x,c) -> AttendanceRequirementOK(x,c)",
+    "forall x,c: AttendanceRequirementOK(x,c) & PrerequisiteOK(x,c) & FeeOK(x,c) & DisciplineOK(x) -> Eligible(x,c)",
+    "forall x,c: Eligible(x,c) -> MayWriteExam(x,c)",
+    "forall x,c: Student(x) & Enrolled(x,c) -> HasExamRecord(x,c)",
+    "forall x,c: HasExamRecord(x,c) & not Eligible(x,c) -> NotEligible(x,c)",
+    "forall x: Student(x) -> exists c: Enrolled(x,c)",
+    "exists x: Student(x) & Enrolled(x,AI)"
+  ],
+  "queries": [
+    {
+      "query": "Eligible(S002,SE)",
+      "expected": true,
+      "actual": true,
+      "type": "success"
+    },
+    {
+      "query": "Eligible(S003,DBMS)",
+      "expected": true,
+      "actual": true,
+      "type": "success"
+    },
+    {
+      "query": "Eligible(S003,CN)",
+      "expected": true,
+      "actual": true,
+      "type": "success"
+    },
+    {
+      "query": "Eligible(S003,SE)",
+      "expected": true,
+      "actual": true,
+      "type": "success"
+    },
+    {
+      "query": "Eligible(S004,AI)",
+      "expected": true,
+      "actual": true,
+      "type": "success"
+    },
+    {
+      "query": "Eligible(S001,AI)",
+      "expected": false,
+      "actual": false,
+      "type": "failure"
+    },
+    {
+      "query": "Eligible(S001,DBMS)",
+      "expected": false,
+      "actual": false,
+      "type": "failure"
+    },
+    {
+      "query": "Eligible(S001,OS)",
+      "expected": false,
+      "actual": false,
+      "type": "failure"
+    },
+    {
+      "query": "Eligible(S001,CN)",
+      "expected": false,
+      "actual": false,
+      "type": "failure"
+    },
+    {
+      "query": "Eligible(S001,SE)",
+      "expected": false,
+      "actual": false,
+      "type": "failure"
+    },
+    {
+      "query": "Eligible(x,c)",
+      "expected": "binding returned",
+      "actual": {
+        "student": "S002",
+        "course": "SE"
+      },
+      "type": "binding"
+    },
+    {
+      "query": "Eligible(x,c)",
+      "expected": "binding returned",
+      "actual": {
+        "student": "S003",
+        "course": "DBMS"
+      },
+      "type": "binding"
+    },
+    {
+      "query": "Eligible(x,c)",
+      "expected": "binding returned",
+      "actual": {
+        "student": "S003",
+        "course": "CN"
+      },
+      "type": "binding"
+    },
+    {
+      "query": "Eligible(x,c)",
+      "expected": "binding returned",
+      "actual": {
+        "student": "S003",
+        "course": "SE"
+      },
+      "type": "binding"
+    },
+    {
+      "query": "Eligible(x,c)",
+      "expected": "binding returned",
+      "actual": {
+        "student": "S004",
+        "course": "AI"
+      },
+      "type": "binding"
+    }
+  ],
+  "query_counts": {
+    "success": 5,
+    "fail": 5,
+    "binding": 5
+  },
+  "growth": [
+    {
+      "students": 10,
+      "courses": 2,
+      "propositional_rules": 140,
+      "fol_axioms": 12,
+      "facts": 100
+    },
+    {
+      "students": 100,
+      "courses": 5,
+      "propositional_rules": 3500,
+      "fol_axioms": 12,
+      "facts": 2500
+    },
+    {
+      "students": 1000,
+      "courses": 10,
+      "propositional_rules": 70000,
+      "fol_axioms": 12,
+      "facts": 50000
+    }
+  ],
+  "defects": [
+    {
+      "defect": "Attendance threshold coded as >75",
+      "fix": "Changed to >=75 to match the regulation"
+    },
+    {
+      "defect": "Approved leave ignored by attendance predicate",
+      "fix": "Added leave waiver to attendance requirement"
+    },
+    {
+      "defect": "Disciplinary status checked as truthy string",
+      "fix": "Normalised blocked status to Boolean"
+    }
+  ],
+  "counts": {
+    "students": 30,
+    "courses": 5,
+    "propositional_instances": 1050,
+    "fol_axioms": 12,
+    "facts": 750
+  },
+  "crossover": "The fixed FOL rule set is preferable as many students and courses reuse the same general rules; facts still grow with the number of student-course pairs, and unification adds runtime overhead."
+}
