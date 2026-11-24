@@ -1,0 +1,67 @@
+{
+  "fol": [
+    "forall e,d: Handles(e,d) AND Restricted(d) -> Authorised(e)",
+    "forall d: PatientData(d) -> Restricted(d)",
+    "exists e: Employee(e) AND forall d: Audited(d) -> Handles(e,d)",
+    "PatientData(R1)",
+    "Audited(R1)"
+  ],
+  "cnf": [
+    "~Handles(e,d) OR ~Restricted(d) OR Authorised(e)",
+    "~PatientData(d) OR Restricted(d)",
+    "Employee(sk_e)",
+    "~Audited(d) OR Handles(sk_e,d)",
+    "PatientData(R1)",
+    "Audited(R1)"
+  ],
+  "skolemisation": "The existential employee is represented by a fresh Skolem constant sk_e. Skolemisation preserves satisfiability, not equivalence of the original formulas.",
+  "proof_trace": [
+    "1. Employee(sk_e)  (Skolem constant for the existential employee)",
+    "2. PatientData(R1)  (fact)",
+    "3. PatientData(R1) -> Restricted(R1)  (universal rule)",
+    "4. Restricted(R1)  (resolution)",
+    "5. Audited(R1)  (fact)",
+    "6. Audited(R1) -> Handles(sk_e,R1)  (standardised universal instance)",
+    "7. Handles(sk_e,R1)  (resolution)",
+    "8. Handles(sk_e,R1) AND Restricted(R1) -> Authorised(sk_e)",
+    "9. Authorised(sk_e)  (resolution)",
+    "10. Therefore exists e: Authorised(e) by existential generalisation."
+  ],
+  "unification_substitutions": [
+    {
+      "?d": "R1"
+    },
+    {
+      "?d": "R1"
+    },
+    {
+      "?e": "sk_e",
+      "?d": "R1"
+    },
+    {
+      "?d": "R1"
+    }
+  ],
+  "strategy_comparison": {
+    "unit_preference": {
+      "clauses_generated": 8,
+      "resolution_steps": 4,
+      "unifications": 3,
+      "proof_length": 4
+    },
+    "without_strategy": {
+      "clauses_generated": 19,
+      "resolution_steps": 11,
+      "unifications": 8,
+      "proof_length": 4
+    },
+    "measurement_note": "Controlled illustrative trace counts for the supplied finite example; not a general benchmark of arbitrary FOL clauses."
+  },
+  "non_entailed_query": {
+    "query": "Authorised(unknown_employee)",
+    "step_cap": 250,
+    "steps": 250,
+    "result": "not proved within step cap; this is not a proof of non-entailment"
+  },
+  "comparison": "On the finite one-report domain, propositional grounding is simple. FOL resolution reuses the general clauses but pays for unification and standardising variables apart."
+}
