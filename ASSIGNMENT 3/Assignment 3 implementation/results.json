@@ -1,0 +1,1113 @@
+{
+  "task1": {
+    "symbols": 5,
+    "model_count": 32,
+    "query_results": {
+      "P11_entails": {
+        "entailed": true,
+        "contradicted": false,
+        "unknown": false,
+        "models": 32,
+        "kb_evaluations": 32,
+        "satisfying_models": 2
+      },
+      "Safe11_entails": {
+        "entailed": false,
+        "contradicted": true,
+        "unknown": false,
+        "models": 32,
+        "kb_evaluations": 32,
+        "satisfying_models": 2
+      },
+      "W12_unknown": {
+        "entailed": false,
+        "contradicted": false,
+        "unknown": true,
+        "models": 64,
+        "kb_evaluations": 64,
+        "satisfying_models": 4
+      }
+    },
+    "derivation": [
+      "1. B12 (given percept fact)",
+      "2. B12 -> P11 (adjacency rule)",
+      "3. P11 (Modus Ponens from 1 and 2)",
+      "4. S21 is false (given percept fact)",
+      "5. W11 is not inferred from S21; absence of stench is not a proof of no Wumpus unless the converse rule is encoded.",
+      "6. NoPit13 and NoWumpus13 are explicit facts in the second local example.",
+      "7. NoPit13 AND NoWumpus13 -> Safe13; And-Elimination preserves each known conjunct and Modus Ponens derives Safe13."
+    ],
+    "soundness_tables": {
+      "modus_ponens": [
+        {
+          "p": false,
+          "implication": true,
+          "q": false,
+          "premises_hold": false,
+          "conclusion": false
+        },
+        {
+          "p": false,
+          "implication": true,
+          "q": true,
+          "premises_hold": false,
+          "conclusion": true
+        },
+        {
+          "p": true,
+          "implication": false,
+          "q": false,
+          "premises_hold": false,
+          "conclusion": false
+        },
+        {
+          "p": true,
+          "implication": true,
+          "q": true,
+          "premises_hold": true,
+          "conclusion": true
+        }
+      ],
+      "and_elimination": [
+        {
+          "p": false,
+          "q": false,
+          "premise": false,
+          "conclusion": false
+        },
+        {
+          "p": false,
+          "q": true,
+          "premise": false,
+          "conclusion": false
+        },
+        {
+          "p": true,
+          "q": false,
+          "premise": false,
+          "conclusion": true
+        },
+        {
+          "p": true,
+          "q": true,
+          "premise": true,
+          "conclusion": true
+        }
+      ],
+      "unit_resolution": [
+        {
+          "p": false,
+          "q": false,
+          "c1": true,
+          "c2": false,
+          "conclusion": false
+        },
+        {
+          "p": false,
+          "q": true,
+          "c1": true,
+          "c2": false,
+          "conclusion": true
+        },
+        {
+          "p": true,
+          "q": false,
+          "c1": false,
+          "c2": true,
+          "conclusion": false
+        },
+        {
+          "p": true,
+          "q": true,
+          "c1": true,
+          "c2": true,
+          "conclusion": true
+        }
+      ]
+    },
+    "scaling": [
+      {
+        "n": 2,
+        "symbols": 16,
+        "models": "65536"
+      },
+      {
+        "n": 3,
+        "symbols": 36,
+        "models": "68719476736"
+      },
+      {
+        "n": 4,
+        "symbols": 64,
+        "models": "18446744073709551616"
+      }
+    ],
+    "full_n2_enumeration": {
+      "models_enumerated": 65536,
+      "time_seconds": 0.0033578570000827312
+    },
+    "note": "The complete n=2 assignment space is enumerated; n=3 and n=4 full spaces are infeasible. Local query-relevant fragments are exhaustively checked."
+  },
+  "task2": {
+    "policy_rules": [
+      "ValidBadge -> Identified",
+      "Identified -> AccessAllowed",
+      "Staff -> ValidBadge",
+      "Visitor -> Escort",
+      "Emergency -> Override",
+      "Override -> AccessAllowed",
+      "AfterHours -> SupervisorApproval",
+      "SupervisorApproval -> AccessAllowed",
+      "RestrictedZone -> ValidBadge",
+      "NOTExpired -> ValidBadge",
+      "Visitor OR Staff",
+      "AccessAllowed <-> (Override OR SupervisorApproval OR Staff)",
+      "NOT(Expired AND AccessAllowed)",
+      "NOT(RestrictedZone) OR ValidBadge"
+    ],
+    "manual_cnf": [
+      "P -> Q  becomes  ~P OR Q",
+      "P <-> Q becomes (~P OR Q) AND (~Q OR P)",
+      "P OR (Q AND R) becomes (P OR Q) AND (P OR R)"
+    ],
+    "proof": {
+      "entailed": true,
+      "clauses": 7,
+      "resolvents_attempted": 10,
+      "tautologies_discarded": 0,
+      "subsumed": 4,
+      "proof_steps": 4
+    },
+    "chain_scaling": [
+      {
+        "chain_length": 10,
+        "initial_clauses": 12,
+        "entailed": true,
+        "clauses": 68,
+        "resolvents_attempted": 224,
+        "tautologies_discarded": 0,
+        "subsumed": 158,
+        "proof_steps": 57,
+        "time_seconds": 0.0010316719999536872
+      },
+      {
+        "chain_length": 20,
+        "initial_clauses": 22,
+        "entailed": true,
+        "clauses": 195,
+        "resolvents_attempted": 1257,
+        "tautologies_discarded": 0,
+        "subsumed": 1078,
+        "proof_steps": 174,
+        "time_seconds": 0.011730602999705297
+      },
+      {
+        "chain_length": 40,
+        "initial_clauses": 42,
+        "entailed": true,
+        "clauses": 798,
+        "resolvents_attempted": 10742,
+        "tautologies_discarded": 0,
+        "subsumed": 9950,
+        "proof_steps": 757,
+        "time_seconds": 0.2756593519998205
+      },
+      {
+        "chain_length": 80,
+        "initial_clauses": 82,
+        "entailed": true,
+        "clauses": 2856,
+        "resolvents_attempted": 73759,
+        "tautologies_discarded": 0,
+        "subsumed": 70921,
+        "proof_steps": 2775,
+        "time_seconds": 5.950543967000158
+      }
+    ],
+    "non_entailed": {
+      "entailed": false,
+      "clauses": 3,
+      "resolvents_attempted": 0,
+      "tautologies_discarded": 0,
+      "subsumed": 0,
+      "proof_steps": 0
+    },
+    "model_family": [
+      {
+        "symbols": 8,
+        "models": 256,
+        "entailed": true,
+        "time_seconds": 0.0005891400001019065
+      },
+      {
+        "symbols": 10,
+        "models": 1024,
+        "entailed": true,
+        "time_seconds": 0.0012667199998759315
+      },
+      {
+        "symbols": 12,
+        "models": 4096,
+        "entailed": true,
+        "time_seconds": 0.0054452700001093035
+      },
+      {
+        "symbols": 14,
+        "models": 16384,
+        "entailed": true,
+        "time_seconds": 0.022967672000049788
+      }
+    ],
+    "interpretation": "Resolution is effective when the query has a short contradiction proof; model checking is predictable for very small symbol sets but exponential in the number of symbols."
+  },
+  "task3": {
+    "vocabulary": [
+      "Student(x)",
+      "Enrolled(x,c)",
+      "Attendance(x,c)",
+      "PrerequisiteCleared(x,c)",
+      "FeesPaid(x,c)",
+      "DisciplinaryBlocked(x)",
+      "ApprovedLeave(x,c)",
+      "Eligible(x,c)"
+    ],
+    "axioms": [
+      "forall x,c: Student(x) & Enrolled(x,c) & Attendance(x,c)>=75 -> AttendanceOK(x,c)",
+      "forall x,c: PrerequisiteCleared(x,c) -> PrerequisiteOK(x,c)",
+      "forall x,c: FeesPaid(x,c) -> FeeOK(x,c)",
+      "forall x: not DisciplinaryBlocked(x) -> DisciplineOK(x)",
+      "forall x,c: ApprovedLeave(x,c) -> AttendanceWaived(x,c)",
+      "forall x,c: AttendanceWaived(x,c) OR AttendanceOK(x,c) -> AttendanceRequirementOK(x,c)",
+      "forall x,c: AttendanceRequirementOK(x,c) & PrerequisiteOK(x,c) & FeeOK(x,c) & DisciplineOK(x) -> Eligible(x,c)",
+      "forall x,c: Eligible(x,c) -> MayWriteExam(x,c)",
+      "forall x,c: Student(x) & Enrolled(x,c) -> HasExamRecord(x,c)",
+      "forall x,c: HasExamRecord(x,c) & not Eligible(x,c) -> NotEligible(x,c)",
+      "forall x: Student(x) -> exists c: Enrolled(x,c)",
+      "exists x: Student(x) & Enrolled(x,AI)"
+    ],
+    "queries": [
+      {
+        "query": "Eligible(S002,SE)",
+        "expected": true,
+        "actual": true,
+        "type": "success"
+      },
+      {
+        "query": "Eligible(S003,DBMS)",
+        "expected": true,
+        "actual": true,
+        "type": "success"
+      },
+      {
+        "query": "Eligible(S003,CN)",
+        "expected": true,
+        "actual": true,
+        "type": "success"
+      },
+      {
+        "query": "Eligible(S003,SE)",
+        "expected": true,
+        "actual": true,
+        "type": "success"
+      },
+      {
+        "query": "Eligible(S004,AI)",
+        "expected": true,
+        "actual": true,
+        "type": "success"
+      },
+      {
+        "query": "Eligible(S001,AI)",
+        "expected": false,
+        "actual": false,
+        "type": "failure"
+      },
+      {
+        "query": "Eligible(S001,DBMS)",
+        "expected": false,
+        "actual": false,
+        "type": "failure"
+      },
+      {
+        "query": "Eligible(S001,OS)",
+        "expected": false,
+        "actual": false,
+        "type": "failure"
+      },
+      {
+        "query": "Eligible(S001,CN)",
+        "expected": false,
+        "actual": false,
+        "type": "failure"
+      },
+      {
+        "query": "Eligible(S001,SE)",
+        "expected": false,
+        "actual": false,
+        "type": "failure"
+      },
+      {
+        "query": "Eligible(x,c)",
+        "expected": "binding returned",
+        "actual": {
+          "student": "S002",
+          "course": "SE"
+        },
+        "type": "binding"
+      },
+      {
+        "query": "Eligible(x,c)",
+        "expected": "binding returned",
+        "actual": {
+          "student": "S003",
+          "course": "DBMS"
+        },
+        "type": "binding"
+      },
+      {
+        "query": "Eligible(x,c)",
+        "expected": "binding returned",
+        "actual": {
+          "student": "S003",
+          "course": "CN"
+        },
+        "type": "binding"
+      },
+      {
+        "query": "Eligible(x,c)",
+        "expected": "binding returned",
+        "actual": {
+          "student": "S003",
+          "course": "SE"
+        },
+        "type": "binding"
+      },
+      {
+        "query": "Eligible(x,c)",
+        "expected": "binding returned",
+        "actual": {
+          "student": "S004",
+          "course": "AI"
+        },
+        "type": "binding"
+      }
+    ],
+    "query_counts": {
+      "success": 5,
+      "fail": 5,
+      "binding": 5
+    },
+    "growth": [
+      {
+        "students": 10,
+        "courses": 2,
+        "propositional_rules": 140,
+        "fol_axioms": 12,
+        "facts": 100
+      },
+      {
+        "students": 100,
+        "courses": 5,
+        "propositional_rules": 3500,
+        "fol_axioms": 12,
+        "facts": 2500
+      },
+      {
+        "students": 1000,
+        "courses": 10,
+        "propositional_rules": 70000,
+        "fol_axioms": 12,
+        "facts": 50000
+      }
+    ],
+    "defects": [
+      {
+        "defect": "Attendance threshold coded as >75",
+        "fix": "Changed to >=75 to match the regulation"
+      },
+      {
+        "defect": "Approved leave ignored by attendance predicate",
+        "fix": "Added leave waiver to attendance requirement"
+      },
+      {
+        "defect": "Disciplinary status checked as truthy string",
+        "fix": "Normalised blocked status to Boolean"
+      }
+    ],
+    "counts": {
+      "students": 30,
+      "courses": 5,
+      "propositional_instances": 1050,
+      "fol_axioms": 12,
+      "facts": 750
+    },
+    "crossover": "The fixed FOL rule set is preferable as many students and courses reuse the same general rules; facts still grow with the number of student-course pairs, and unification adds runtime overhead."
+  },
+  "task4": {
+    "unification_tests": [
+      {
+        "left": "?x",
+        "right": "Alice",
+        "mgu": {
+          "?x": "Alice"
+        }
+      },
+      {
+        "left": "?x",
+        "right": "?y",
+        "mgu": {
+          "?x": "?y"
+        }
+      },
+      {
+        "left": "('parent', '?x', 'Bob')",
+        "right": "('parent', 'Alice', '?y')",
+        "mgu": {
+          "?x": "Alice",
+          "?y": "Bob"
+        }
+      },
+      {
+        "left": "?x",
+        "right": "('f', 'Alice')",
+        "mgu": {
+          "?x": [
+            "f",
+            "Alice"
+          ]
+        }
+      },
+      {
+        "left": "?x",
+        "right": "('f', '?x')",
+        "mgu": null
+      }
+    ],
+    "standardising_apart": {
+      "before": "Knows(?x,?y) AND Knows(?x,?y) with same variable names can accidentally force same bindings",
+      "after": "Knows(?x1,?y1) AND Knows(?x2,?y2) after standardising the second clause apart"
+    },
+    "ground_growth": [
+      {
+        "constants": 3,
+        "unary_atoms": 3,
+        "binary_atoms": 9,
+        "ternary_atoms": 27
+      },
+      {
+        "constants": 5,
+        "unary_atoms": 5,
+        "binary_atoms": 25,
+        "ternary_atoms": 125
+      },
+      {
+        "constants": 10,
+        "unary_atoms": 10,
+        "binary_atoms": 100,
+        "ternary_atoms": 1000
+      },
+      {
+        "constants": 20,
+        "unary_atoms": 20,
+        "binary_atoms": 400,
+        "ternary_atoms": 8000
+      },
+      {
+        "constants": 30,
+        "unary_atoms": 30,
+        "binary_atoms": 900,
+        "ternary_atoms": 27000
+      }
+    ],
+    "function_term_growth": [
+      {
+        "depth": 0,
+        "terms": 1
+      },
+      {
+        "depth": 1,
+        "terms": 3
+      },
+      {
+        "depth": 2,
+        "terms": 7
+      },
+      {
+        "depth": 3,
+        "terms": 15
+      },
+      {
+        "depth": 4,
+        "terms": 31
+      },
+      {
+        "depth": 5,
+        "terms": 63
+      }
+    ],
+    "lifted": {
+      "unifications": 12,
+      "inference_steps": 8,
+      "ground_instances_generated": 0
+    },
+    "propositional": {
+      "unifications": 0,
+      "inference_steps": 27,
+      "ground_instances_generated": 34
+    },
+    "decision": "Use lifted inference for reusable general rules and larger constant sets. Propositionalise only for a small, finite, closed domain where ground clauses can be indexed and reused cheaply."
+  },
+  "task5": {
+    "fol": [
+      "forall e,d: Handles(e,d) AND Restricted(d) -> Authorised(e)",
+      "forall d: PatientData(d) -> Restricted(d)",
+      "exists e: Employee(e) AND forall d: Audited(d) -> Handles(e,d)",
+      "PatientData(R1)",
+      "Audited(R1)"
+    ],
+    "cnf": [
+      "~Handles(e,d) OR ~Restricted(d) OR Authorised(e)",
+      "~PatientData(d) OR Restricted(d)",
+      "Employee(sk_e)",
+      "~Audited(d) OR Handles(sk_e,d)",
+      "PatientData(R1)",
+      "Audited(R1)"
+    ],
+    "skolemisation": "The existential employee is represented by a fresh Skolem constant sk_e. Skolemisation preserves satisfiability, not equivalence of the original formulas.",
+    "proof_trace": [
+      "1. Employee(sk_e)  (Skolem constant for the existential employee)",
+      "2. PatientData(R1)  (fact)",
+      "3. PatientData(R1) -> Restricted(R1)  (universal rule)",
+      "4. Restricted(R1)  (resolution)",
+      "5. Audited(R1)  (fact)",
+      "6. Audited(R1) -> Handles(sk_e,R1)  (standardised universal instance)",
+      "7. Handles(sk_e,R1)  (resolution)",
+      "8. Handles(sk_e,R1) AND Restricted(R1) -> Authorised(sk_e)",
+      "9. Authorised(sk_e)  (resolution)",
+      "10. Therefore exists e: Authorised(e) by existential generalisation."
+    ],
+    "unification_substitutions": [
+      {
+        "?d": "R1"
+      },
+      {
+        "?d": "R1"
+      },
+      {
+        "?e": "sk_e",
+        "?d": "R1"
+      },
+      {
+        "?d": "R1"
+      }
+    ],
+    "strategy_comparison": {
+      "unit_preference": {
+        "clauses_generated": 8,
+        "resolution_steps": 4,
+        "unifications": 3,
+        "proof_length": 4
+      },
+      "without_strategy": {
+        "clauses_generated": 19,
+        "resolution_steps": 11,
+        "unifications": 8,
+        "proof_length": 4
+      },
+      "measurement_note": "Controlled illustrative trace counts for the supplied finite example; not a general benchmark of arbitrary FOL clauses."
+    },
+    "non_entailed_query": {
+      "query": "Authorised(unknown_employee)",
+      "step_cap": 250,
+      "steps": 250,
+      "result": "not proved within step cap; this is not a proof of non-entailment"
+    },
+    "comparison": "On the finite one-report domain, propositional grounding is simple. FOL resolution reuses the general clauses but pays for unification and standardising variables apart."
+  },
+  "task6": {
+    "forward_scaling": [
+      {
+        "facts": 100,
+        "forward_facts_derived": 4,
+        "rule_firings": 4,
+        "iterations": 2,
+        "irrelevant_derived_percent": 100.0,
+        "time_seconds": 8.944000001065433e-06
+      },
+      {
+        "facts": 1000,
+        "forward_facts_derived": 4,
+        "rule_firings": 4,
+        "iterations": 2,
+        "irrelevant_derived_percent": 100.0,
+        "time_seconds": 1.422099967385293e-05
+      },
+      {
+        "facts": 10000,
+        "forward_facts_derived": 4,
+        "rule_firings": 4,
+        "iterations": 2,
+        "irrelevant_derived_percent": 100.0,
+        "time_seconds": 0.0008273620001091331
+      }
+    ],
+    "backward_query": {
+      "goal": "ancestor(A,C)",
+      "proved": true,
+      "goals_expanded": 3,
+      "unifications": 2,
+      "max_depth": 2,
+      "repeated_subgoals": 0
+    },
+    "left_recursion": {
+      "naive_rule": "ancestor(X,Y) :- ancestor(X,Z), reports_to(Z,Y)",
+      "problem": "recursive goal repeats before reaching a base fact",
+      "remedy": "variant loop check plus memoisation",
+      "bounded_demo": {
+        "max_depth": 20,
+        "repeated_subgoals_detected": 1
+      }
+    },
+    "interpretation": "Forward chaining materialises every reachable consequence and may process facts irrelevant to a narrow query. Backward chaining starts from the requested goal and can avoid unrelated branches; loop checking is essential for recursive rules."
+  },
+  "task7": {
+    "representation": "First-order definite-clause rules with indexed patient/drug facts; backward chaining for a single prescription query and provenance list for explanations.",
+    "vocabulary": [
+      "Patient(p)",
+      "Drug(d)",
+      "Allergy(p,d)",
+      "SevereInteraction(p,d)",
+      "DuplicateTherapy(p,d)",
+      "RenalRisk(p,d)",
+      "Contraindicated(p,d)",
+      "NeedsClinicianReview(p,d)",
+      "Unsafe(p,d)"
+    ],
+    "rules": [
+      "Allergy(patient,drug) -> Contraindicated(patient,drug)",
+      "SevereInteraction(patient,drug) -> Contraindicated(patient,drug)",
+      "DuplicateTherapy(patient,drug) -> ReviewRequired(patient,drug)",
+      "AgeRisk(patient,drug) -> ReviewRequired(patient,drug)",
+      "RenalRisk(patient,drug) -> DoseReview(patient,drug)",
+      "PregnancyRisk(patient,drug) -> ReviewRequired(patient,drug)",
+      "Contraindicated(patient,drug) -> Unsafe(patient,drug)",
+      "ReviewRequired(patient,drug) -> NeedsClinicianReview(patient,drug)",
+      "DoseReview(patient,drug) -> NeedsClinicianReview(patient,drug)",
+      "NoContraindication(patient,drug) AND DoseOK(patient,drug) -> SafeForReview(patient,drug)"
+    ],
+    "test_cases": [
+      {
+        "case": "MED-01",
+        "allergy": true,
+        "interaction": false,
+        "duplicate": true,
+        "age_risk": true,
+        "renal_risk": true,
+        "pregnancy_risk": true,
+        "decision": "UNSAFE",
+        "explanation": [
+          "documented allergy",
+          "duplicate therapy",
+          "age-related risk",
+          "renal dose review",
+          "pregnancy-related risk"
+        ]
+      },
+      {
+        "case": "MED-02",
+        "allergy": false,
+        "interaction": true,
+        "duplicate": false,
+        "age_risk": false,
+        "renal_risk": false,
+        "pregnancy_risk": false,
+        "decision": "UNSAFE",
+        "explanation": [
+          "severe interaction"
+        ]
+      },
+      {
+        "case": "MED-03",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": false,
+        "age_risk": false,
+        "renal_risk": false,
+        "pregnancy_risk": false,
+        "decision": "NO_RULE_TRIGGERED",
+        "explanation": []
+      },
+      {
+        "case": "MED-04",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": false,
+        "age_risk": false,
+        "renal_risk": false,
+        "pregnancy_risk": false,
+        "decision": "NO_RULE_TRIGGERED",
+        "explanation": []
+      },
+      {
+        "case": "MED-05",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": false,
+        "age_risk": false,
+        "renal_risk": false,
+        "pregnancy_risk": false,
+        "decision": "NO_RULE_TRIGGERED",
+        "explanation": []
+      },
+      {
+        "case": "MED-06",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": false,
+        "age_risk": false,
+        "renal_risk": true,
+        "pregnancy_risk": false,
+        "decision": "REVIEW",
+        "explanation": [
+          "renal dose review"
+        ]
+      },
+      {
+        "case": "MED-07",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": false,
+        "age_risk": false,
+        "renal_risk": false,
+        "pregnancy_risk": false,
+        "decision": "NO_RULE_TRIGGERED",
+        "explanation": []
+      },
+      {
+        "case": "MED-08",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": true,
+        "age_risk": false,
+        "renal_risk": false,
+        "pregnancy_risk": false,
+        "decision": "REVIEW",
+        "explanation": [
+          "duplicate therapy"
+        ]
+      },
+      {
+        "case": "MED-09",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": false,
+        "age_risk": false,
+        "renal_risk": false,
+        "pregnancy_risk": false,
+        "decision": "NO_RULE_TRIGGERED",
+        "explanation": []
+      },
+      {
+        "case": "MED-10",
+        "allergy": true,
+        "interaction": false,
+        "duplicate": false,
+        "age_risk": false,
+        "renal_risk": false,
+        "pregnancy_risk": false,
+        "decision": "UNSAFE",
+        "explanation": [
+          "documented allergy"
+        ]
+      },
+      {
+        "case": "MED-11",
+        "allergy": false,
+        "interaction": true,
+        "duplicate": false,
+        "age_risk": false,
+        "renal_risk": true,
+        "pregnancy_risk": false,
+        "decision": "UNSAFE",
+        "explanation": [
+          "severe interaction",
+          "renal dose review"
+        ]
+      },
+      {
+        "case": "MED-12",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": false,
+        "age_risk": true,
+        "renal_risk": false,
+        "pregnancy_risk": false,
+        "decision": "REVIEW",
+        "explanation": [
+          "age-related risk"
+        ]
+      },
+      {
+        "case": "MED-13",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": false,
+        "age_risk": false,
+        "renal_risk": false,
+        "pregnancy_risk": false,
+        "decision": "NO_RULE_TRIGGERED",
+        "explanation": []
+      },
+      {
+        "case": "MED-14",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": false,
+        "age_risk": false,
+        "renal_risk": false,
+        "pregnancy_risk": true,
+        "decision": "REVIEW",
+        "explanation": [
+          "pregnancy-related risk"
+        ]
+      },
+      {
+        "case": "MED-15",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": true,
+        "age_risk": false,
+        "renal_risk": false,
+        "pregnancy_risk": false,
+        "decision": "REVIEW",
+        "explanation": [
+          "duplicate therapy"
+        ]
+      },
+      {
+        "case": "MED-16",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": false,
+        "age_risk": false,
+        "renal_risk": true,
+        "pregnancy_risk": false,
+        "decision": "REVIEW",
+        "explanation": [
+          "renal dose review"
+        ]
+      },
+      {
+        "case": "MED-17",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": false,
+        "age_risk": false,
+        "renal_risk": false,
+        "pregnancy_risk": false,
+        "decision": "NO_RULE_TRIGGERED",
+        "explanation": []
+      },
+      {
+        "case": "MED-18",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": false,
+        "age_risk": false,
+        "renal_risk": false,
+        "pregnancy_risk": false,
+        "decision": "NO_RULE_TRIGGERED",
+        "explanation": []
+      },
+      {
+        "case": "MED-19",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": false,
+        "age_risk": false,
+        "renal_risk": false,
+        "pregnancy_risk": false,
+        "decision": "NO_RULE_TRIGGERED",
+        "explanation": []
+      },
+      {
+        "case": "MED-20",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": false,
+        "age_risk": false,
+        "renal_risk": false,
+        "pregnancy_risk": false,
+        "decision": "NO_RULE_TRIGGERED",
+        "explanation": []
+      },
+      {
+        "case": "MED-21",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": false,
+        "age_risk": false,
+        "renal_risk": true,
+        "pregnancy_risk": false,
+        "decision": "REVIEW",
+        "explanation": [
+          "renal dose review"
+        ]
+      },
+      {
+        "case": "MED-22",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": true,
+        "age_risk": false,
+        "renal_risk": false,
+        "pregnancy_risk": false,
+        "decision": "REVIEW",
+        "explanation": [
+          "duplicate therapy"
+        ]
+      },
+      {
+        "case": "MED-23",
+        "allergy": true,
+        "interaction": false,
+        "duplicate": false,
+        "age_risk": true,
+        "renal_risk": false,
+        "pregnancy_risk": false,
+        "decision": "UNSAFE",
+        "explanation": [
+          "documented allergy",
+          "age-related risk"
+        ]
+      },
+      {
+        "case": "MED-24",
+        "allergy": false,
+        "interaction": true,
+        "duplicate": false,
+        "age_risk": false,
+        "renal_risk": false,
+        "pregnancy_risk": false,
+        "decision": "UNSAFE",
+        "explanation": [
+          "severe interaction"
+        ]
+      },
+      {
+        "case": "MED-25",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": false,
+        "age_risk": false,
+        "renal_risk": false,
+        "pregnancy_risk": false,
+        "decision": "NO_RULE_TRIGGERED",
+        "explanation": []
+      },
+      {
+        "case": "MED-26",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": false,
+        "age_risk": false,
+        "renal_risk": true,
+        "pregnancy_risk": false,
+        "decision": "REVIEW",
+        "explanation": [
+          "renal dose review"
+        ]
+      },
+      {
+        "case": "MED-27",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": false,
+        "age_risk": false,
+        "renal_risk": false,
+        "pregnancy_risk": true,
+        "decision": "REVIEW",
+        "explanation": [
+          "pregnancy-related risk"
+        ]
+      },
+      {
+        "case": "MED-28",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": false,
+        "age_risk": false,
+        "renal_risk": false,
+        "pregnancy_risk": false,
+        "decision": "NO_RULE_TRIGGERED",
+        "explanation": []
+      },
+      {
+        "case": "MED-29",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": true,
+        "age_risk": false,
+        "renal_risk": false,
+        "pregnancy_risk": false,
+        "decision": "REVIEW",
+        "explanation": [
+          "duplicate therapy"
+        ]
+      },
+      {
+        "case": "MED-30",
+        "allergy": false,
+        "interaction": false,
+        "duplicate": false,
+        "age_risk": false,
+        "renal_risk": false,
+        "pregnancy_risk": false,
+        "decision": "NO_RULE_TRIGGERED",
+        "explanation": []
+      }
+    ],
+    "test_summary": {
+      "total": 30,
+      "unsafe": 6,
+      "review": 11,
+      "no_rule_triggered": 13
+    },
+    "scale": [
+      {
+        "rules": 40,
+        "patients": 50,
+        "queries": 30,
+        "baseline_scan_steps": 1200,
+        "indexed_steps": 180,
+        "inference_steps": 1380,
+        "mean_latency_ms": 0.02248453332261609,
+        "peak_memory_kb": 2.443359375,
+        "explanation_mean_length": 0.7666666666666667
+      },
+      {
+        "rules": 400,
+        "patients": 50,
+        "queries": 30,
+        "baseline_scan_steps": 12000,
+        "indexed_steps": 180,
+        "inference_steps": 12180,
+        "mean_latency_ms": 0.2874734666571991,
+        "peak_memory_kb": 29.5078125,
+        "explanation_mean_length": 0.7666666666666667
+      },
+      {
+        "rules": 2000,
+        "patients": 50,
+        "queries": 30,
+        "baseline_scan_steps": 60000,
+        "indexed_steps": 180,
+        "inference_steps": 60180,
+        "mean_latency_ms": 1.3201686000077946,
+        "peak_memory_kb": 150.912109375,
+        "explanation_mean_length": 0.7666666666666667
+      }
+    ],
+    "design": "The component is advisory only. It must not autonomously approve a prescription. Missing allergy, medication or condition data must yield an explicit incomplete-data warning and clinician review. Uncertainty and conflicting records are outside pure classical FOL and require provenance, confidence handling and human oversight."
+  }
+}

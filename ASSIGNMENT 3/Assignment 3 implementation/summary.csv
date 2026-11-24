@@ -1,0 +1,8 @@
+task,main_metric
+task1,{}
+task2,"{""proof"": {""entailed"": true, ""clauses"": 7, ""resolvents_attempted"": 10, ""tautologies_discarded"": 0, ""subsumed"": 4, ""proof_steps"": 4}}"
+task3,"{""query_counts"": {""success"": 5, ""fail"": 5, ""binding"": 5}}"
+task4,{}
+task5,"{""strategy_comparison"": {""unit_preference"": {""clauses_generated"": 8, ""resolution_steps"": 4, ""unifications"": 3, ""proof_length"": 4}, ""without_strategy"": {""clauses_generated"": 19, ""resolution_steps"": 11, ""unifications"": 8, ""proof_length"": 4}, ""measurement_note"": ""Controlled illustrative trace counts for the supplied finite example; not a general benchmark of arbitrary FOL clauses.""}}"
+task6,"{""backward_query"": {""goal"": ""ancestor(A,C)"", ""proved"": true, ""goals_expanded"": 3, ""unifications"": 2, ""max_depth"": 2, ""repeated_subgoals"": 0}}"
+task7,"{""test_summary"": {""total"": 30, ""unsafe"": 6, ""review"": 11, ""no_rule_triggered"": 13}}"

@@ -1,0 +1,24 @@
+CSA1717 Artificial Intelligence – Assignment 3 (CO3)
+
+TASK1:
+local symbols 5 models 32 queries {'P11_entails': {'entailed': True, 'contradicted': False, 'unknown': False, 'models': 32, 'kb_evaluations': 32, 'satisfying_models': 2}, 'Safe11_entails': {'entailed': False, 'contradicted': True, 'unknown': False, 'models': 32, 'kb_evaluations': 32, 'satisfying_models': 2}, 'W12_unknown': {'entailed': False, 'contradicted': False, 'unknown': True, 'models': 64, 'kb_evaluations': 64, 'satisfying_models': 4}}
+
+TASK2:
+policy rules 14 proof {'entailed': True, 'clauses': 7, 'resolvents_attempted': 10, 'tautologies_discarded': 0, 'subsumed': 4, 'proof_steps': 4} chain sizes [(10, True, 224), (20, True, 1257), (40, True, 10742), (80, True, 73759)]
+
+TASK3:
+FOL axioms 12 query suite {'success': 5, 'fail': 5, 'binding': 5} growth [{'students': 10, 'courses': 2, 'propositional_rules': 140, 'fol_axioms': 12, 'facts': 100}, {'students': 100, 'courses': 5, 'propositional_rules': 3500, 'fol_axioms': 12, 'facts': 2500}, {'students': 1000, 'courses': 10, 'propositional_rules': 70000, 'fol_axioms': 12, 'facts': 50000}]
+
+TASK4:
+unification cases 5 ground growth [{'constants': 3, 'unary_atoms': 3, 'binary_atoms': 9, 'ternary_atoms': 27}, {'constants': 5, 'unary_atoms': 5, 'binary_atoms': 25, 'ternary_atoms': 125}, {'constants': 10, 'unary_atoms': 10, 'binary_atoms': 100, 'ternary_atoms': 1000}, {'constants': 20, 'unary_atoms': 20, 'binary_atoms': 400, 'ternary_atoms': 8000}, {'constants': 30, 'unary_atoms': 30, 'binary_atoms': 900, 'ternary_atoms': 27000}]
+
+TASK5:
+proof steps 10 strategy {'unit_preference': {'clauses_generated': 8, 'resolution_steps': 4, 'unifications': 3, 'proof_length': 4}, 'without_strategy': {'clauses_generated': 19, 'resolution_steps': 11, 'unifications': 8, 'proof_length': 4}, 'measurement_note': 'Controlled illustrative trace counts for the supplied finite example; not a general benchmark of arbitrary FOL clauses.'}
+
+TASK6:
+forward scales [(100, 4), (1000, 4), (10000, 4)] backward {'goal': 'ancestor(A,C)', 'proved': True, 'goals_expanded': 3, 'unifications': 2, 'max_depth': 2, 'repeated_subgoals': 0}
+
+TASK7:
+30 cases {'total': 30, 'unsafe': 6, 'review': 11, 'no_rule_triggered': 13} scale [{'rules': 40, 'patients': 50, 'queries': 30, 'baseline_scan_steps': 1200, 'indexed_steps': 180, 'inference_steps': 1380, 'mean_latency_ms': 0.02248453332261609, 'peak_memory_kb': 2.443359375, 'explanation_mean_length': 0.7666666666666667}, {'rules': 400, 'patients': 50, 'queries': 30, 'baseline_scan_steps': 12000, 'indexed_steps': 180, 'inference_steps': 12180, 'mean_latency_ms': 0.2874734666571991, 'peak_memory_kb': 29.5078125, 'explanation_mean_length': 0.7666666666666667}, {'rules': 2000, 'patients': 50, 'queries': 30, 'baseline_scan_steps': 60000, 'indexed_steps': 180, 'inference_steps': 60180, 'mean_latency_ms': 1.3201686000077946, 'peak_memory_kb': 150.912109375, 'explanation_mean_length': 0.7666666666666667}]
+
+Files written: results/results.json results/summary.csv
