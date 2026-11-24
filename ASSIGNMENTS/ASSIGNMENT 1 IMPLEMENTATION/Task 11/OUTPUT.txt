@@ -1,4 +1,0 @@
-Recommended weighted search: Uniform-Cost Search
-Selected path: [0, 1, 3]
-Total travel time: 10
-Optimal: True

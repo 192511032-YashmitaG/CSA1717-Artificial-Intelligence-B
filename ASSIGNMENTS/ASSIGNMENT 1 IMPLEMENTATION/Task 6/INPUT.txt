@@ -1,3 +1,0 @@
-Branching factor (b): 3
-Depth limit: 4
-Use recurrence T(0)=1 and T(d)=1+bT(d-1).

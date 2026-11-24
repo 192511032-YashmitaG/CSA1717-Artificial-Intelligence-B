@@ -1,2 +1,0 @@
-Input: Task_09/performance_results.txt
-Compare measured results with the theoretical time and space complexity of BFS, iterative DFS and IDDFS.

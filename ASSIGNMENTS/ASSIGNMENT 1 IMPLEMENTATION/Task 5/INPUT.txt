@@ -1,2 +1,0 @@
-Compare BFS, iterative DFS and recursive IDDFS.
-Use V for vertices, E for edges, b for branching factor and d for shallowest goal depth.

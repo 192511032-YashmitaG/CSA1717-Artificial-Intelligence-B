@@ -1,3 +1,0 @@
-k=2: no sensor belief states=2, plan length=1; local sensor hypotheses=2, worst-case moves=1
-k=4: no sensor belief states=4, plan length=3; local sensor hypotheses=4, worst-case moves=3
-k=8: no sensor belief states=8, plan length=7; local sensor hypotheses=8, worst-case moves=7

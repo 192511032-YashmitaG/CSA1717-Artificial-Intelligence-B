@@ -1,3 +1,0 @@
-Graph: 31 locations; branching factor: 2
-Case 1: start=0, goal=0 (best case)
-Case 2: start=0, goal=30 (goal at the end of the generated graph).

@@ -1,3 +1,0 @@
-T(0..4): [1, 4, 13, 40, 121]
-Closed form T(4): 121
-IDDFS total calls: 179

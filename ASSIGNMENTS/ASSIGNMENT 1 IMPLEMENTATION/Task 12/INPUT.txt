@@ -1,3 +1,0 @@
-Belief state: {0, ..., k-1}; pharmacy at node 0
-Test k=2, 4 and 8
-Compare movement without a local sensor and with a sensor that identifies the current junction.

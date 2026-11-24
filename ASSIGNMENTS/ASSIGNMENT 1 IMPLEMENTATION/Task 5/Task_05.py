@@ -1,5 +1,0 @@
-print('Algorithm comparison')
-print('BFS       : graph time O(V+E); frontier can be O(V)')
-print('Iterative DFS: graph time O(V+E); visited/parent O(V)')
-print('Recursive IDDFS: tree time O(b^d); active stack O(d)')
-print('Preprocessing: adjacency list O(V+E) time and space')

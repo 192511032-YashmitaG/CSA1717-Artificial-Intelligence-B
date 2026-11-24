@@ -1,9 +1,0 @@
-Performance file exists: True
-SEED: deterministic graph generator (no random values)
-RUNS PER ALGORITHM AND SIZE: 5
-states | algorithm | generated | expanded | max_frontier | depth | path_cost | optimal | avg_time_ms
-1000 | BFS | 1000 | 999 | 667 | 6 | 6 | True | 0.209
-1000 | Iterative DFS | 958 | 954 | 13 | 6 | 6 | None | 0.239
-1000 | Recursive IDDFS | 1498 | 498 | 7 | 6 | 6 | True | 0.392
-10000 | BFS | 10000 | 9999 | 6667 | 9 | 9 | True | 1.807
-10000 | Iterative DFS | 253 | 242 | 19 | 9 | 9 | None | 0.050

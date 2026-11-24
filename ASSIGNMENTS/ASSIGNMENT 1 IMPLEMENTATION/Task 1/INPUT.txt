@@ -1,5 +1,0 @@
-Graph: 15 hospital locations
-Branching factor: 2
-Start: 0 (pharmacy)
-Goal: 14 (ward)
-Run: python Task_01.py
