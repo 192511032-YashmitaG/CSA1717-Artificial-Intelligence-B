@@ -1,0 +1,14 @@
+CASE 1: reachable goal (0 to 39)
+BFS: found=True, path=[0, 3, 12, 39], depth=3, cost=3
+Iterative DFS: found=True, path=[0, 3, 12, 39], depth=3, cost=3
+Recursive IDDFS: found=True, path=[0, 3, 12, 39], depth=3, cost=3
+CASE 2: start equals goal (7 to 7)
+BFS: found=True, path=[7], depth=0
+Iterative DFS: found=True, path=[7], depth=0
+Recursive IDDFS: found=True, path=[7], depth=0
+CASE 3: unreachable goal (remove all edges to node 39)
+BFS: found=False, path=None
+Iterative DFS: found=False, path=None
+Recursive IDDFS: found=False, path=None
+CASE 4: weighted route (0 to 3)
+UCS: path= [0, 1, 3] travel_cost= 10 optimal= True
