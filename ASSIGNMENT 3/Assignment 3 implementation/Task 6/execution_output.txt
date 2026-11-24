@@ -1,0 +1,46 @@
+{
+  "forward_scaling": [
+    {
+      "facts": 100,
+      "forward_facts_derived": 4,
+      "rule_firings": 4,
+      "iterations": 2,
+      "irrelevant_derived_percent": 100.0,
+      "time_seconds": 8.151999736583093e-06
+    },
+    {
+      "facts": 1000,
+      "forward_facts_derived": 4,
+      "rule_firings": 4,
+      "iterations": 2,
+      "irrelevant_derived_percent": 100.0,
+      "time_seconds": 2.185199991799891e-05
+    },
+    {
+      "facts": 10000,
+      "forward_facts_derived": 4,
+      "rule_firings": 4,
+      "iterations": 2,
+      "irrelevant_derived_percent": 100.0,
+      "time_seconds": 0.0002513419999559119
+    }
+  ],
+  "backward_query": {
+    "goal": "ancestor(A,C)",
+    "proved": true,
+    "goals_expanded": 3,
+    "unifications": 2,
+    "max_depth": 2,
+    "repeated_subgoals": 0
+  },
+  "left_recursion": {
+    "naive_rule": "ancestor(X,Y) :- ancestor(X,Z), reports_to(Z,Y)",
+    "problem": "recursive goal repeats before reaching a base fact",
+    "remedy": "variant loop check plus memoisation",
+    "bounded_demo": {
+      "max_depth": 20,
+      "repeated_subgoals_detected": 1
+    }
+  },
+  "interpretation": "Forward chaining materialises every reachable consequence and may process facts irrelevant to a narrow query. Backward chaining starts from the requested goal and can avoid unrelated branches; loop checking is essential for recursive rules."
+}
