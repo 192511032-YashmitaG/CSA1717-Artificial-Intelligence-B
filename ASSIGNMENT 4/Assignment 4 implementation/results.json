@@ -1,0 +1,1161 @@
+{
+  "task1": {
+    "dataset": "Wisconsin Diagnostic Breast Cancer (569 rows, 30 numeric features)",
+    "split": {
+      "train": 426,
+      "test": 143
+    },
+    "training_accuracy": 1.0,
+    "five_fold_cv_accuracy": 0.9296853625170998,
+    "heldout_test_accuracy": 0.9230769230769231,
+    "majority_baseline_test_accuracy": 0.6293706293706294,
+    "optimism_vs_cv": 0.07031463748290023,
+    "optimism_vs_test": 0.07692307692307687
+  },
+  "task2": {
+    "deskcheck": {
+      "class_counts": {
+        "Pass": 4,
+        "Fail": 4
+      },
+      "root_gains": [
+        {
+          "feature": "Attendance",
+          "gain": 0.18872187554086717
+        },
+        {
+          "feature": "Assignments",
+          "gain": 0.18872187554086717
+        },
+        {
+          "feature": "Internal marks",
+          "gain": 0.18872187554086717
+        }
+      ],
+      "selected_root": "Attendance",
+      "root_branches": {
+        "High": {
+          "rows": 4,
+          "pass": 3,
+          "fail": 1
+        },
+        "Low": {
+          "rows": 4,
+          "pass": 1,
+          "fail": 3
+        }
+      }
+    },
+    "public_dataset": "Breast Cancer, first 8 features discretised into quartile bins",
+    "custom_tree": {
+      "depth": 6,
+      "leaves": 66,
+      "accuracy": 0.8951048951048951,
+      "precision": 0.9629629629629629,
+      "recall": 0.8666666666666667,
+      "f1": 0.9122807017543859,
+      "confusion_matrix": [
+        [
+          50,
+          3
+        ],
+        [
+          12,
+          78
+        ]
+      ]
+    },
+    "sklearn_verification": {
+      "depth": 8,
+      "leaves": 32,
+      "accuracy": 0.8951048951048951,
+      "precision": 0.9629629629629629,
+      "recall": 0.8666666666666667,
+      "f1": 0.9122807017543859,
+      "confusion_matrix": [
+        [
+          50,
+          3
+        ],
+        [
+          12,
+          78
+        ]
+      ]
+    },
+    "pruned_tree": {
+      "depth": 4,
+      "leaves": 12,
+      "train_accuracy": 0.9154929577464789,
+      "test_accuracy": 0.8881118881118881
+    }
+  },
+  "task3": {
+    "dataset": "200 points from two one-dimensional Gaussian components, fixed synthetic seed",
+    "responsibility_sum_corrected": 2.0,
+    "faulty_responsibility_sum_first_point": null,
+    "corrected_runs": [
+      {
+        "seed": 0,
+        "final_log_likelihood": -307.04179129452746,
+        "nondecreasing": true
+      },
+      {
+        "seed": 1,
+        "final_log_likelihood": -307.04179129452746,
+        "nondecreasing": true
+      },
+      {
+        "seed": 2,
+        "final_log_likelihood": -307.04179129452746,
+        "nondecreasing": true
+      },
+      {
+        "seed": 3,
+        "final_log_likelihood": -307.04179129452746,
+        "nondecreasing": true
+      },
+      {
+        "seed": 4,
+        "final_log_likelihood": -307.04179129452746,
+        "nondecreasing": true
+      },
+      {
+        "seed": 5,
+        "final_log_likelihood": -307.04179129452746,
+        "nondecreasing": true
+      },
+      {
+        "seed": 6,
+        "final_log_likelihood": -307.04179129452746,
+        "nondecreasing": true
+      },
+      {
+        "seed": 7,
+        "final_log_likelihood": -307.04179129452746,
+        "nondecreasing": true
+      },
+      {
+        "seed": 8,
+        "final_log_likelihood": -307.04179129452746,
+        "nondecreasing": true
+      },
+      {
+        "seed": 9,
+        "final_log_likelihood": -307.04179129452746,
+        "nondecreasing": true
+      },
+      {
+        "seed": 10,
+        "final_log_likelihood": -307.04179129452746,
+        "nondecreasing": true
+      },
+      {
+        "seed": 11,
+        "final_log_likelihood": -307.04179129452746,
+        "nondecreasing": true
+      },
+      {
+        "seed": 12,
+        "final_log_likelihood": -307.04179129452746,
+        "nondecreasing": true
+      },
+      {
+        "seed": 13,
+        "final_log_likelihood": -307.04179129452746,
+        "nondecreasing": true
+      },
+      {
+        "seed": 14,
+        "final_log_likelihood": -307.04179129452746,
+        "nondecreasing": true
+      },
+      {
+        "seed": 15,
+        "final_log_likelihood": -307.04179129452746,
+        "nondecreasing": true
+      },
+      {
+        "seed": 16,
+        "final_log_likelihood": -307.04179129452746,
+        "nondecreasing": true
+      },
+      {
+        "seed": 17,
+        "final_log_likelihood": -307.04179129452746,
+        "nondecreasing": true
+      },
+      {
+        "seed": 18,
+        "final_log_likelihood": -307.04179129452746,
+        "nondecreasing": true
+      },
+      {
+        "seed": 19,
+        "final_log_likelihood": -307.04179129452746,
+        "nondecreasing": true
+      }
+    ],
+    "all_corrected_non_decreasing": true,
+    "mean_final_log_likelihood": -307.0417912945275,
+    "faulty_log_likelihood_seed0": [
+      -410.8437338949124,
+      -374.34684883706916,
+      -313.66474102952725,
+      -339.4903940867399,
+      -410.3341086199853,
+      -507.40381053685894,
+      -630.6466529724551,
+      -784.1292655011521,
+      -962.6297336521981,
+      -1152.4021528098842,
+      -1347.8833769618786,
+      -1554.7819863964196,
+      -1786.4571388140282,
+      -2064.560305858401,
+      -2411.734060308799,
+      -2888.5250162213633,
+      -3615.82535806089,
+      -4724.923394428279,
+      -6293.0282032583755,
+      -8326.57833707321,
+      -10555.728607132478,
+      -13058.897022837205,
+      -15693.658040869213,
+      -18411.152743969826,
+      -22345.27882862569,
+      -27768.313757146443,
+      -33710.63617201288,
+      -41598.881103923435,
+      -52665.081469746976,
+      -61291.29706748154,
+      -64479.18373934092,
+      -67695.73207167615,
+      -70424.60599462426,
+      -72292.35698628602,
+      -73845.32454819002,
+      -75340.10033185121,
+      -76796.47598516496,
+      -74993.41002405426,
+      -58132.75454632136,
+      -9428.344656948826
+    ],
+    "repaired_log_likelihood_seed0": [
+      -410.2047496390816,
+      -368.52333904061805,
+      -309.68071179082614,
+      -307.04474729047706,
+      -307.0418009698151,
+      -307.04179132353255,
+      -307.041791294614,
+      -307.0417912945277,
+      -307.04179129452746,
+      -307.0417912945275,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746,
+      -307.04179129452746
+    ],
+    "regression_single_gaussian": {
+      "weights_sum": 1.0,
+      "log_likelihood_non_decreasing": true
+    }
+  },
+  "task4": {
+    "deskcheck": {
+      "hidden_activations": [
+        0.6224593312018546,
+        0.574442516811659
+      ],
+      "output": [
+        0.564288936882314
+      ],
+      "loss": 0.0949220652615721,
+      "delta_output": [
+        -0.10712694258625229
+      ],
+      "updated_W1": [
+        [
+          0.5075525687553729,
+          0.29738119284787734
+        ],
+        [
+          -0.4,
+          0.8
+        ]
+      ],
+      "updated_b1": [
+        0.00755256875537291,
+        -0.00261880715212267
+      ],
+      "updated_W2": [
+        [
+          0.6333410825179691
+        ],
+        [
+          -0.16923086474120758
+        ]
+      ],
+      "updated_b2": [
+        0.05356347129312614
+      ]
+    },
+    "gradient_check_max_relative_error": 7.515355464389498e-11,
+    "xor": {
+      "predicted": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "expected": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "all_correct": true
+    },
+    "digits_stress": [
+      {
+        "hidden_units": 2,
+        "learning_rate": 0.001,
+        "activation": "sigmoid",
+        "epochs": 32,
+        "loss": 2.2842674881993426,
+        "accuracy": 0.18666666666666668,
+        "macro_f1": 0.06378530191917615,
+        "time_s": 0.11422069999997575,
+        "gradient_norm_proxy": 1.4732647248832957
+      },
+      {
+        "hidden_units": 2,
+        "learning_rate": 0.01,
+        "activation": "sigmoid",
+        "epochs": 30,
+        "loss": 1.5822462951383052,
+        "accuracy": 0.37777777777777777,
+        "macro_f1": 0.2362557810894142,
+        "time_s": 0.09984510700002147,
+        "gradient_norm_proxy": 7.212843445765432
+      },
+      {
+        "hidden_units": 2,
+        "learning_rate": 0.1,
+        "activation": "sigmoid",
+        "epochs": 36,
+        "loss": 1.0858142893299696,
+        "accuracy": 0.5844444444444444,
+        "macro_f1": 0.5489912378981214,
+        "time_s": 0.10981010699998706,
+        "gradient_norm_proxy": 21.731025050083588
+      },
+      {
+        "hidden_units": 2,
+        "learning_rate": 1.0,
+        "activation": "sigmoid",
+        "epochs": 22,
+        "loss": 2.3648416936454097,
+        "accuracy": 0.10222222222222223,
+        "macro_f1": 0.018548387096774192,
+        "time_s": 0.10008188000000473,
+        "gradient_norm_proxy": 46.839422707906785
+      },
+      {
+        "hidden_units": 8,
+        "learning_rate": 0.001,
+        "activation": "sigmoid",
+        "epochs": 12,
+        "loss": 2.2597475742652087,
+        "accuracy": 0.1288888888888889,
+        "macro_f1": 0.048393442622950825,
+        "time_s": 0.04913318100000197,
+        "gradient_norm_proxy": 2.2468176673012055
+      },
+      {
+        "hidden_units": 8,
+        "learning_rate": 0.01,
+        "activation": "sigmoid",
+        "epochs": 67,
+        "loss": 0.20879245616169773,
+        "accuracy": 0.9244444444444444,
+        "macro_f1": 0.9223699741448744,
+        "time_s": 0.29474121800001285,
+        "gradient_norm_proxy": 21.28851901457537
+      },
+      {
+        "hidden_units": 8,
+        "learning_rate": 0.1,
+        "activation": "sigmoid",
+        "epochs": 53,
+        "loss": 0.030570446817900623,
+        "accuracy": 0.9466666666666667,
+        "macro_f1": 0.9462424121531535,
+        "time_s": 0.1795923870000138,
+        "gradient_norm_proxy": 40.44463533856181
+      },
+      {
+        "hidden_units": 8,
+        "learning_rate": 1.0,
+        "activation": "sigmoid",
+        "epochs": 12,
+        "loss": 2.3564186128696294,
+        "accuracy": 0.09777777777777778,
+        "macro_f1": 0.017813765182186234,
+        "time_s": 0.06026453300000867,
+        "gradient_norm_proxy": 71.66700696420199
+      },
+      {
+        "hidden_units": 32,
+        "learning_rate": 0.001,
+        "activation": "sigmoid",
+        "epochs": 21,
+        "loss": 1.995912649917489,
+        "accuracy": 0.6666666666666666,
+        "macro_f1": 0.6313462222624222,
+        "time_s": 0.08826638899995487,
+        "gradient_norm_proxy": 4.229476741907912
+      },
+      {
+        "hidden_units": 32,
+        "learning_rate": 0.01,
+        "activation": "sigmoid",
+        "epochs": 44,
+        "loss": 0.11015996602764135,
+        "accuracy": 0.9533333333333334,
+        "macro_f1": 0.9531387390941891,
+        "time_s": 0.25064106499996797,
+        "gradient_norm_proxy": 25.406548061504246
+      },
+      {
+        "hidden_units": 32,
+        "learning_rate": 0.1,
+        "activation": "sigmoid",
+        "epochs": 36,
+        "loss": 0.0049435450849727655,
+        "accuracy": 0.9644444444444444,
+        "macro_f1": 0.9641662870469478,
+        "time_s": 0.1575051359999975,
+        "gradient_norm_proxy": 54.42986300002848
+      },
+      {
+        "hidden_units": 32,
+        "learning_rate": 1.0,
+        "activation": "sigmoid",
+        "epochs": 19,
+        "loss": 2.641445088024954,
+        "accuracy": 0.09777777777777778,
+        "macro_f1": 0.017813765182186234,
+        "time_s": 0.07679247899994834,
+        "gradient_norm_proxy": 202.60632942425096
+      },
+      {
+        "hidden_units": 64,
+        "learning_rate": 0.001,
+        "activation": "sigmoid",
+        "epochs": 31,
+        "loss": 1.5027397900989354,
+        "accuracy": 0.7488888888888889,
+        "macro_f1": 0.7091254940025574,
+        "time_s": 0.15332828200001813,
+        "gradient_norm_proxy": 7.045056728024189
+      },
+      {
+        "hidden_units": 64,
+        "learning_rate": 0.01,
+        "activation": "sigmoid",
+        "epochs": 34,
+        "loss": 0.10317458580932272,
+        "accuracy": 0.9488888888888889,
+        "macro_f1": 0.9484628290609933,
+        "time_s": 0.21576693100001876,
+        "gradient_norm_proxy": 27.232853323508454
+      },
+      {
+        "hidden_units": 64,
+        "learning_rate": 0.1,
+        "activation": "sigmoid",
+        "epochs": 29,
+        "loss": 0.0317287690482072,
+        "accuracy": 0.94,
+        "macro_f1": 0.9392392953474774,
+        "time_s": 0.19063404199999923,
+        "gradient_norm_proxy": 54.17886796617708
+      },
+      {
+        "hidden_units": 64,
+        "learning_rate": 1.0,
+        "activation": "sigmoid",
+        "epochs": 14,
+        "loss": 2.6297047022660465,
+        "accuracy": 0.09555555555555556,
+        "macro_f1": 0.01744421906693712,
+        "time_s": 0.08327858400002697,
+        "gradient_norm_proxy": 294.49730663894024
+      },
+      {
+        "hidden_units": 2,
+        "learning_rate": 0.001,
+        "activation": "relu",
+        "epochs": 28,
+        "loss": 2.278047427481975,
+        "accuracy": 0.12,
+        "macro_f1": 0.04463725929243171,
+        "time_s": 0.11732937900001161,
+        "gradient_norm_proxy": 1.9854340818458718
+      },
+      {
+        "hidden_units": 2,
+        "learning_rate": 0.01,
+        "activation": "relu",
+        "epochs": 12,
+        "loss": 2.3048872135587346,
+        "accuracy": 0.09333333333333334,
+        "macro_f1": 0.017107942973523423,
+        "time_s": 0.044427997000013875,
+        "gradient_norm_proxy": 2.006480501882814
+      },
+      {
+        "hidden_units": 2,
+        "learning_rate": 0.1,
+        "activation": "relu",
+        "epochs": 12,
+        "loss": 2.3134630403465617,
+        "accuracy": 0.10222222222222223,
+        "macro_f1": 0.018548387096774192,
+        "time_s": 0.05117458299997679,
+        "gradient_norm_proxy": 3.694653672112425
+      },
+      {
+        "hidden_units": 2,
+        "learning_rate": 1.0,
+        "activation": "relu",
+        "epochs": 22,
+        "loss": 2.365262667044799,
+        "accuracy": 0.10222222222222223,
+        "macro_f1": 0.018548387096774192,
+        "time_s": 0.0858670869999969,
+        "gradient_norm_proxy": 43.22143921290872
+      },
+      {
+        "hidden_units": 8,
+        "learning_rate": 0.001,
+        "activation": "relu",
+        "epochs": 86,
+        "loss": 0.5494130884614122,
+        "accuracy": 0.8244444444444444,
+        "macro_f1": 0.823046844235295,
+        "time_s": 0.31316009500000064,
+        "gradient_norm_proxy": 6.17799593024223
+      },
+      {
+        "hidden_units": 8,
+        "learning_rate": 0.01,
+        "activation": "relu",
+        "epochs": 46,
+        "loss": 0.17431379339081257,
+        "accuracy": 0.9244444444444444,
+        "macro_f1": 0.9242557116903057,
+        "time_s": 0.17943389800001341,
+        "gradient_norm_proxy": 10.937768136772295
+      },
+      {
+        "hidden_units": 8,
+        "learning_rate": 0.1,
+        "activation": "relu",
+        "epochs": 20,
+        "loss": 0.18808864786549853,
+        "accuracy": 0.8844444444444445,
+        "macro_f1": 0.8843867088230493,
+        "time_s": 0.09825466000000915,
+        "gradient_norm_proxy": 18.850483855027345
+      },
+      {
+        "hidden_units": 8,
+        "learning_rate": 1.0,
+        "activation": "relu",
+        "epochs": 22,
+        "loss": 2.4168448141686873,
+        "accuracy": 0.09555555555555556,
+        "macro_f1": 0.01744421906693712,
+        "time_s": 0.07491591799998787,
+        "gradient_norm_proxy": 109.30164678970597
+      },
+      {
+        "hidden_units": 32,
+        "learning_rate": 0.001,
+        "activation": "relu",
+        "epochs": 44,
+        "loss": 0.4106187146907932,
+        "accuracy": 0.8955555555555555,
+        "macro_f1": 0.8932737508223273,
+        "time_s": 0.18260345499999175,
+        "gradient_norm_proxy": 7.762746997623157
+      },
+      {
+        "hidden_units": 32,
+        "learning_rate": 0.01,
+        "activation": "relu",
+        "epochs": 36,
+        "loss": 0.04220355588756182,
+        "accuracy": 0.96,
+        "macro_f1": 0.9593666469727286,
+        "time_s": 0.14526822999999922,
+        "gradient_norm_proxy": 12.958153193836807
+      },
+      {
+        "hidden_units": 32,
+        "learning_rate": 0.1,
+        "activation": "relu",
+        "epochs": 20,
+        "loss": 0.08966591138966326,
+        "accuracy": 0.9466666666666667,
+        "macro_f1": 0.945755467969874,
+        "time_s": 0.09953093000001445,
+        "gradient_norm_proxy": 28.81928916034781
+      },
+      {
+        "hidden_units": 32,
+        "learning_rate": 1.0,
+        "activation": "relu",
+        "epochs": 12,
+        "loss": 2.1436224551827436,
+        "accuracy": 0.37777777777777777,
+        "macro_f1": 0.27956975728883243,
+        "time_s": 0.05237813299999061,
+        "gradient_norm_proxy": 121.45070588752493
+      },
+      {
+        "hidden_units": 64,
+        "learning_rate": 0.001,
+        "activation": "relu",
+        "epochs": 43,
+        "loss": 0.25175154626453167,
+        "accuracy": 0.9311111111111111,
+        "macro_f1": 0.9309008232032945,
+        "time_s": 0.20497743299995363,
+        "gradient_norm_proxy": 9.628411498458387
+      },
+      {
+        "hidden_units": 64,
+        "learning_rate": 0.01,
+        "activation": "relu",
+        "epochs": 22,
+        "loss": 0.06486866126675443,
+        "accuracy": 0.9555555555555556,
+        "macro_f1": 0.9557074397233972,
+        "time_s": 0.10792471500002421,
+        "gradient_norm_proxy": 13.050445616071363
+      },
+      {
+        "hidden_units": 64,
+        "learning_rate": 0.1,
+        "activation": "relu",
+        "epochs": 28,
+        "loss": 0.0038122705959083483,
+        "accuracy": 0.9777777777777777,
+        "macro_f1": 0.9776263309882649,
+        "time_s": 0.13059514200000422,
+        "gradient_norm_proxy": 39.525271423239325
+      },
+      {
+        "hidden_units": 64,
+        "learning_rate": 1.0,
+        "activation": "relu",
+        "epochs": 18,
+        "loss": 2.3859621111495923,
+        "accuracy": 0.18666666666666668,
+        "macro_f1": 0.11060917884338342,
+        "time_s": 0.11801129700000956,
+        "gradient_norm_proxy": 315.5033983041265
+      }
+    ],
+    "digits_test_confusion_matrix": [
+      [
+        39,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        5
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        45
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        44
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        46
+      ],
+      [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        43
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        46
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        45
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        45
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        43
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        45
+      ]
+    ]
+  },
+  "task5": {
+    "dataset": "Breast Cancer Wisconsin; numeric features discretised into four bins for categorical NB",
+    "naive_bayes_alpha": {
+      "0": {
+        "accuracy": 0.9370629370629371,
+        "precision": 0.9550561797752809,
+        "recall": 0.9444444444444444,
+        "f1": 0.9497206703910615,
+        "confusion_matrix": [
+          [
+            49,
+            4
+          ],
+          [
+            5,
+            85
+          ]
+        ],
+        "log_loss": 0.5321798528015683
+      },
+      "0.1": {
+        "accuracy": 0.9370629370629371,
+        "precision": 0.9550561797752809,
+        "recall": 0.9444444444444444,
+        "f1": 0.9497206703910615,
+        "confusion_matrix": [
+          [
+            49,
+            4
+          ],
+          [
+            5,
+            85
+          ]
+        ],
+        "log_loss": 0.4207600881955452
+      },
+      "1": {
+        "accuracy": 0.9370629370629371,
+        "precision": 0.9550561797752809,
+        "recall": 0.9444444444444444,
+        "f1": 0.9497206703910615,
+        "confusion_matrix": [
+          [
+            49,
+            4
+          ],
+          [
+            5,
+            85
+          ]
+        ],
+        "log_loss": 0.37839057762365275
+      },
+      "10": {
+        "accuracy": 0.9370629370629371,
+        "precision": 0.945054945054945,
+        "recall": 0.9555555555555556,
+        "f1": 0.9502762430939227,
+        "confusion_matrix": [
+          [
+            48,
+            5
+          ],
+          [
+            4,
+            86
+          ]
+        ],
+        "log_loss": 0.26507733122570054
+      }
+    },
+    "svm": {
+      "linear": {
+        "best_params": {
+          "svc__C": 0.1
+        },
+        "cv_f1": 0.9815797105516731,
+        "support_vectors": 47,
+        "training_time_s": 21.270283356999983,
+        "accuracy": 0.986013986013986,
+        "precision": 0.9888888888888889,
+        "recall": 0.9888888888888889,
+        "f1": 0.9888888888888889,
+        "confusion_matrix": [
+          [
+            52,
+            1
+          ],
+          [
+            1,
+            89
+          ]
+        ]
+      },
+      "rbf": {
+        "best_params": {
+          "svc__C": 10,
+          "svc__gamma": 0.01
+        },
+        "cv_f1": 0.9780067613086562,
+        "support_vectors": 54,
+        "training_time_s": 0.6990078700000026,
+        "accuracy": 0.9790209790209791,
+        "precision": 0.9887640449438202,
+        "recall": 0.9777777777777777,
+        "f1": 0.9832402234636871,
+        "confusion_matrix": [
+          [
+            52,
+            1
+          ],
+          [
+            2,
+            88
+          ]
+        ]
+      }
+    },
+    "decision_tree": {
+      "accuracy": 0.9230769230769231,
+      "precision": 0.9540229885057471,
+      "recall": 0.9222222222222223,
+      "f1": 0.9378531073446328,
+      "confusion_matrix": [
+        [
+          49,
+          4
+        ],
+        [
+          7,
+          83
+        ]
+      ]
+    },
+    "ebl": {
+      "domain_theory_rules": [
+        "HighCurrent AND HighTemperature -> ThermalStress",
+        "ThermalStress AND LowCooling -> OverheatRisk",
+        "OverheatRisk AND HighPressure -> HazardousOverload",
+        "HighCurrent AND HighPressure -> ElectricalLoad",
+        "ElectricalLoad AND LowCooling -> HazardousOverload",
+        "AlarmActive AND HighCurrent -> HazardousOverload",
+        "SensorValid AND HazardousOverload -> DispatchInspection"
+      ],
+      "explained_case": {
+        "HighCurrent": true,
+        "HighTemperature": true,
+        "LowCooling": true,
+        "HighPressure": true,
+        "AlarmActive": false,
+        "SensorValid": true
+      },
+      "explanation_tree": [
+        "HighCurrent AND HighTemperature -> ThermalStress",
+        "ThermalStress AND LowCooling -> OverheatRisk",
+        "OverheatRisk AND HighPressure -> HazardousOverload",
+        "HazardousOverload AND SensorValid -> DispatchInspection"
+      ],
+      "operational_rule": "HighCurrent AND HighTemperature AND LowCooling AND HighPressure -> HazardousOverload",
+      "test_cases": [
+        {
+          "case": 1,
+          "theory_hazard": false,
+          "learned_rule_hazard": false
+        },
+        {
+          "case": 2,
+          "theory_hazard": false,
+          "learned_rule_hazard": false
+        },
+        {
+          "case": 3,
+          "theory_hazard": false,
+          "learned_rule_hazard": false
+        },
+        {
+          "case": 4,
+          "theory_hazard": false,
+          "learned_rule_hazard": false
+        },
+        {
+          "case": 5,
+          "theory_hazard": false,
+          "learned_rule_hazard": false
+        },
+        {
+          "case": 6,
+          "theory_hazard": false,
+          "learned_rule_hazard": false
+        },
+        {
+          "case": 7,
+          "theory_hazard": false,
+          "learned_rule_hazard": false
+        },
+        {
+          "case": 8,
+          "theory_hazard": true,
+          "learned_rule_hazard": true
+        },
+        {
+          "case": 9,
+          "theory_hazard": false,
+          "learned_rule_hazard": false
+        },
+        {
+          "case": 10,
+          "theory_hazard": false,
+          "learned_rule_hazard": false
+        },
+        {
+          "case": 11,
+          "theory_hazard": true,
+          "learned_rule_hazard": false
+        },
+        {
+          "case": 12,
+          "theory_hazard": true,
+          "learned_rule_hazard": true
+        },
+        {
+          "case": 13,
+          "theory_hazard": false,
+          "learned_rule_hazard": false
+        },
+        {
+          "case": 14,
+          "theory_hazard": false,
+          "learned_rule_hazard": false
+        },
+        {
+          "case": 15,
+          "theory_hazard": false,
+          "learned_rule_hazard": false
+        },
+        {
+          "case": 16,
+          "theory_hazard": false,
+          "learned_rule_hazard": false
+        },
+        {
+          "case": 17,
+          "theory_hazard": false,
+          "learned_rule_hazard": false
+        },
+        {
+          "case": 18,
+          "theory_hazard": false,
+          "learned_rule_hazard": false
+        },
+        {
+          "case": 19,
+          "theory_hazard": true,
+          "learned_rule_hazard": false
+        },
+        {
+          "case": 20,
+          "theory_hazard": false,
+          "learned_rule_hazard": false
+        }
+      ],
+      "theory_inference_steps": 88,
+      "learned_rule_inference_steps": 20,
+      "scope_note": "The operational rule is a sufficient condition generalised from one explained case; it does not capture every hazard derivable from the wider domain theory."
+    }
+  },
+  "task6": {
+    "algorithm": "tabular Q-learning; epsilon-greedy exploration; gamma=.95; alpha=.15; 500 episodes",
+    "state_definition": "(occupancy, temperature_bucket, price_bucket, 15-minute time_slot)",
+    "actions": [
+      "Off",
+      "Low",
+      "High"
+    ],
+    "reward": "-energy_kWh*(1+0.8*high_price) - 2.5*comfort_violation_degree_when_occupied",
+    "training": {
+      "episodes": 500,
+      "mean_reward_last_50": -8.248,
+      "mean_energy_last_50": 6.641999999999999,
+      "mean_violations_last_50": 0.12,
+      "episodes_to_convergence_estimate": null
+    },
+    "learned_policy_20_rollouts": {
+      "mean_reward": -7.5699999999999985,
+      "mean_energy_kwh": 6.45,
+      "mean_comfort_violations": 0.0
+    },
+    "fixed_rule_20_rollouts": {
+      "mean_reward": -11.080000000000002,
+      "mean_energy_kwh": 7.4,
+      "mean_comfort_violations": 0.0
+    },
+    "adversarial_test": {
+      "state": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "action_outcomes": {
+        "Off": {
+          "next_state": [
+            0,
+            1,
+            0,
+            2
+          ],
+          "reward": -0.0,
+          "energy": 0,
+          "comfort_violation": 0
+        },
+        "Low": {
+          "next_state": [
+            0,
+            1,
+            0,
+            2
+          ],
+          "reward": -0.63,
+          "energy": 0.35,
+          "comfort_violation": 0
+        },
+        "High": {
+          "next_state": [
+            0,
+            0,
+            0,
+            2
+          ],
+          "reward": -1.4400000000000002,
+          "energy": 0.8,
+          "comfort_violation": 0
+        }
+      },
+      "diagnosis": "A short-horizon or incorrectly weighted reward may favour switching off before occupancy; a pre-cooling term or explicit arrival-forecast state is needed."
+    },
+    "limitation": "The simulator is a controlled teaching model, not a calibrated building thermal model."
+  }
+}
