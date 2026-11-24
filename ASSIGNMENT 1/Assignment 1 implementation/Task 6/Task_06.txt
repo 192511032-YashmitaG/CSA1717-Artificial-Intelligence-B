@@ -1,0 +1,24 @@
+TASK 6 – FORMULATE THE RECURRENCE RELATION
+
+The recursive algorithm is depth-limited search used by iterative deepening. Let T(l) be the maximum number of recursive calls made by a depth-limited search with remaining depth l in a regular tree with branching factor b.
+
+Base case: at remaining depth zero, the current node is checked and no child calls are made. Thus T(0)=1.
+
+For l>0, one call checks the current node and can make up to b recursive calls, each with remaining depth l-1. Therefore:
+
+T(l) = 1 + b T(l-1), for l > 0
+T(0) = 1
+
+The term 1 is the work at the current node (goal/limit checks and local loop setup). The b recursive subproblems each have size l-1. This recurrence describes one depth-limited search. Iterative deepening repeats this search at limits 0 through d, so its total call count is the sum of T(0)+T(1)+...+T(d).
+
+
+ACTUAL PROGRAM OUTPUT
+T(0) = 1
+T(1) = 1 + 3*T(0) = 4
+T(2) = 1 + 3*T(1) = 13
+T(3) = 1 + 3*T(2) = 40
+T(4) = 1 + 3*T(3) = 121
+
+INPUT AND EXPECTED OUTPUT
+INPUT: Branching factor b=3 and depth limit l=4.
+EXPECTED: T(0)=1, T(1)=4, T(2)=13, T(3)=40 and T(4)=121.
